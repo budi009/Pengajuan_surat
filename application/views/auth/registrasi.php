@@ -27,6 +27,7 @@
                                                     <div class="form-group">
                                                         <label class="small mb-1" for="inputPassword">Password</label>
                                                         <input class="form-control py-4" id="password1" name="password1" type="password" placeholder="Enter password" />
+                                                        <small class="text-danger"><?= form_error('password1');?></small>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
