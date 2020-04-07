@@ -29,3 +29,6 @@
     <!-- Custom Theme Style -->
     <link href="<?= base_url('assets'); ?>../build/css/custom.min.css" rel="stylesheet">
   </head>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">

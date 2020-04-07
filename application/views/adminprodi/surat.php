@@ -1,15 +1,14 @@
-                    <!-- admin/template/dashboard_header -->
+                        <!-- adminprodi/template/dashboard_header -->
 
           <!-- sidebar menu -->
-                     <!-- admin/template/dasboard_side -->
+                     <!-- adminprodi/template/dasboard_side -->
           <!-- /sidebar menu -->
 
           <!-- top navigation -->
-                   <!-- admin/template/dasboard_top -->
+                   <!-- adminprodi/template/dasboard_top -->
           <!-- /top navigation -->
 
         <!-- page content -->
-        
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
@@ -218,10 +217,6 @@
     </div>
   </div>
   </div>
-          <!-- /top tiles -->
 
-
-           
-    <!-- admin/template/dashboard_footer -->
-              
-            
+<!-- adminprodi/template/dashboard_footer -->
+          

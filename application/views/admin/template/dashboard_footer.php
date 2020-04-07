@@ -1,3 +1,14 @@
+</div>
+          </div>
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        
+	
+  </body>
+</html>
+
 <footer>
           <div class="clearfix"></div>
         </footer>
