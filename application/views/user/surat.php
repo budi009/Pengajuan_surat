@@ -11,7 +11,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
-          <h2>Home</h2>
+          <h2>Surat</h2>
           <!-- /top tiles -->
       </div>
 

@@ -1,7 +1,7 @@
 <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="<?= base_url('adminprodi/index') ?>" class="site_title"><i class="fa fa-institution"></i> <span>Akademik</span></a>
+              <a href="<?= base_url('user/index') ?>" class="site_title"><i class="fa fa-institution"></i> <span>Akademik</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -24,8 +24,10 @@
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
                 <ul class="nav side-menu">
-                  <li><a href="<?= base_url('adminprodi/index'); ?>" ><i class="fa fa-home"></i> Home </a></li>
-                  <li><a href="<?= base_url('adminprodi/surat'); ?>"><i class="fa fa-envelope"></i> Surat Pengajuan </a></li>
+                  <li><a href="<?= base_url('user/index'); ?>" ><i class="fa fa-home"></i> Home </a></li>
+                  <li><a href="<?= base_url('user/surat'); ?>"><i class="fa fa-envelope"></i> Pengajuan Surat </a></li>
+                  <li><a ><i class="fa fa-graduation-cap"></i> Daftar Wisuda </a></li>
+                  <li><a ><i class="fa fa-book"></i> Kuisioner </a></li>
                   <li><a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>
                 </ul>
               </div>

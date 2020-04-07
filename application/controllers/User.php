@@ -8,9 +8,23 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         
 
-        $this->load->view('admin/dashboard_header');
+        $this->load->view('user/template/dashboard_header');
+        $this->load->view('user/template/dashboard_side', $data);
+        $this->load->view('user/template/dashboard_top', $data);
         $this->load->view('user/index', $data);
-        $this->load->view('admin/dashboard_footer');
+        $this->load->view('user/template/dashboard_footer');
+
+    }
+    public function surat()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        
+
+        $this->load->view('user/template/dashboard_header');
+        $this->load->view('user/template/dashboard_side', $data);
+        $this->load->view('user/template/dashboard_top', $data);
+        $this->load->view('user/surat', $data);
+        $this->load->view('user/template/dashboard_footer');
 
     }
 
