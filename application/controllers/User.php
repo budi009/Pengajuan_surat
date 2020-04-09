@@ -15,7 +15,7 @@ class User extends CI_Controller
         $this->load->view('user/template/dashboard_footer');
 
     }
-    public function surat()
+    public function surat1()
     {
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         
@@ -23,9 +23,22 @@ class User extends CI_Controller
         $this->load->view('user/template/dashboard_header');
         $this->load->view('user/template/dashboard_side', $data);
         $this->load->view('user/template/dashboard_top', $data);
-        $this->load->view('user/surat', $data);
+        $this->load->view('user/surat1', $data);
         $this->load->view('user/template/dashboard_footer');
 
     }
+    public function surat2()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        
+
+        $this->load->view('user/template/dashboard_header');
+        $this->load->view('user/template/dashboard_side', $data);
+        $this->load->view('user/template/dashboard_top', $data);
+        $this->load->view('user/surat2', $data);
+        $this->load->view('user/template/dashboard_footer');
+
+    }
+
 
 }
