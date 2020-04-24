@@ -58,6 +58,9 @@
                             <option>Teknik Mesin</option>
                             <option>Teknik Sipil</option>
                             <option>Agribisnis</option>
+                            <option>Teknik Manufaktur Kapal</option>
+                            <option>Manajemen Bisnis Pariwisata</option>
+                            <option>Teknologi Pengolahan Hasil Ternak</option>
                           </select>
                         </div>
                       </div>

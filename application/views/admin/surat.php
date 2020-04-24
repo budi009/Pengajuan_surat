@@ -47,6 +47,7 @@
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
+                          <th>No</th>
                           <th>NIM</th>
                           <th>Nama</th>
                           <th>Prodi</th>
@@ -64,6 +65,30 @@
                           <th>Fc Ktm Mahasiswa</th>
                           <th>Buku Pedoman Akademik</th>
                         </tr>
+                        <?php
+                        $id = 1;
+                        foreach($surat_aktif_kuliah as $ak) {
+                        ?>
+                        <tr>
+                          <td><?php echo $id++ ?></td>
+                          <td><?php echo $ak->nim ?></td>
+                          <td><?php echo $ak->nama ?></td>
+                          <td><?php echo $ak->prodi ?></td>
+                          <td><?php echo $ak->semester ?></td>
+                          <td><?php echo $ak->th_angkatan ?></td>
+                          <td><?php echo $ak->th_akademik ?></td>
+                          <td><?php echo $ak->nama_ortu ?></td>         
+                          <td><?php echo $ak->pekerjaan_ortu ?></td>                    
+                          <td><?php echo $ak->nip_ortu ?></td>                    
+                          <td><?php echo $ak->jabatan ?></td>                    
+                          <td><?php echo $ak->instansi ?></td>                    
+                          <td><?php echo $ak->alamat_ortu ?></td>                    
+                          <td><?php echo $ak->keperluan ?></td>                    
+                          <td><?php echo $ak->fc_ktp_ortu ?></td>                    
+                          <td><?php echo $ak->fc_ktm_mhs ?></td>                    
+                          <td><?php echo $ak->fc_buku_pedoman ?></td>    
+                        </tr>                                  
+                       <?php } ?>
                       
                     </table>
 					
@@ -93,15 +118,31 @@
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th>NIM</th>
+                          <th>No</th>
+                          <th>Nim</th>
                           <th>Nama</th>
                           <th>Prodi</th>
                           <th>Lama Cuti</th>
                           <th>Mulai Cuti</th>
-                          <th>Batas Cuti</th>
-                          
+                          <th>Batas Cuti</th>         
+                          <th>alasan</th>                  
                         </tr>
-                      
+                        <!-- <?php
+                        $id = 1;
+                        foreach ($surat_cuti as $sc => $value) {
+                          # code...
+                        ?>
+                        <tr>
+                          <td><?php echo $id++ ?></td>
+                          <td><?php echo $sc->nim ?></td>
+                          <td><?php echo $sc->nama ?></td>
+                          <td><?php echo $sc->prodi ?></td>
+                          <td><?php echo $sc->lama_cuti ?></td>
+                          <td><?php echo $sc->mulai_cuti ?></td>
+                          <td><?php echo $sc->batas_cuti ?></td>         
+                          <td><?php echo $sc->alasan ?></td>  
+                        </tr>                  
+                       <?php } ?> -->
                     </table>
           
           

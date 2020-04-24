@@ -25,7 +25,16 @@
               <div class="menu_section">
                 <ul class="nav side-menu">
                   <li><a href="<?= base_url('admin/index'); ?>" ><i class="fa fa-home"></i> Home </a></li>
-                  <li><a href="<?= base_url('admin/surat'); ?>"><i class="fa fa-envelope"></i> Surat Pengajuan </a></li>
+                  <li><a ><i class="fa fa-envelope"></i> Pengajuan Surat <span class="fa fa-chevron-down"></span> </a>
+                      <ul class="nav child_menu">
+                        <li><a href="<?= base_url('admin/surat'); ?>">Surat Keterangan Aktif Kuliah </a></li>
+                        <li><a href="<?= base_url('admin2/suratcuti'); ?>">Surat Pengajuan Cuti</a></li>
+                        <!-- <li><a href="#">Form Validation</a></li>
+                        <li><a href="#">Form Wizard</a></li>
+                        <li><a href="#">Form Upload</a></li>
+                        <li><a href="#">Form Buttons</a></li> -->
+                      </ul>
+                  </li>
                   <li><a><i class="fa fa-graduation-cap"></i> Pendaftar Wisuda </a></li>
                   <li><a><i class="fa fa-book"></i> Kuisioner </a></li>
                   <li><a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>

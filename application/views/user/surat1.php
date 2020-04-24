@@ -58,6 +58,9 @@
                             <option>Teknik Mesin</option>
                             <option>Teknik Sipil</option>
                             <option>Agribisnis</option>
+                            <option>Teknik Manufaktur Kapal</option>
+                            <option>Manajemen Bisnis Pariwisata</option>
+                            <option>Teknologi Pengolahan Hasil Ternak</option>
                           </select>
                         </div>
                       </div>
@@ -144,37 +147,40 @@
                       </div>
 
                       <div class="ln_solid"></div>
+
                       <h2>KEPERLUAN SURAT</h2>
-                          <div class="radio col-md-4">
+                          <div class="radio col-md-2">
                             <label>
                               <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Persyaratan Pengurusan Tunjangan Anak
                             </label>
                           </div>
-                          <div class="radio">         
+                          <div class="radio col-md-2">         
                             <label>
                               <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Persyaratan Pengurusan Pensiun
                             </label>
                           </div>
-                          <div class="radio col-md-4">
+                          <div class="radio col-md-2">
                             <label>
                               <input type="radio" value="option3" id="optionsRadios3" name="optionsRadios"> Persyaratan Pengurusan BPJS
                             </label>
                           </div>
-                          <div class="radio">
+                          <div class="radio col-md-2">
                             <label>
                               <input type="radio" value="option4" id="optionsRadios4" name="optionsRadios"> Beasiswa Pemerintah Daerah/Kota.........
                             </label>
                           </div>
-                          <div class="radio col-md-4">
+                          <div class="radio col-md-2">
                             <label>
                               <input type="radio" value="option5" id="optionsRadios5" name="optionsRadios"> Kegiatan Lomba..........
                             </label>
                           </div>
-                          <div class="radio">
+                          <div class="radio col-md-2">
                             <label>
                               <input type="radio" value="option6" id="optionsRadios6" name="optionsRadios"> Lainnya
                             </label>
                           </div>
+                          <br>
+                          <br>
                       <div class="ln_solid"></div>
                       <div class="item form-group">
                         <div class="col-md-6 col-sm-6 offset-md-5">

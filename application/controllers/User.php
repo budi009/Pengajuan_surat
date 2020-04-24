@@ -37,8 +37,19 @@ class User extends CI_Controller
         $this->load->view('user/template/dashboard_top', $data);
         $this->load->view('user/surat2', $data);
         $this->load->view('user/template/dashboard_footer');
+        
+    }
+    public function daftar_wisuda()
+    {
+        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        
+
+        $this->load->view('user/template/dashboard_header');
+        $this->load->view('user/template/dashboard_side', $data);
+        $this->load->view('user/template/dashboard_top', $data);
+        $this->load->view('user/daftar_wisuda', $data);
+        $this->load->view('user/template/dashboard_footer');
 
     }
-
 
 }
