@@ -29,10 +29,9 @@
                       <ul class="nav child_menu">
                         <li><a href="<?= base_url('user/surat1'); ?>">Surat Keterangan Aktif Kuliah </a></li>
                         <li><a href="<?= base_url('user/surat2'); ?>">Surat Pengajuan Cuti</a></li>
-                        <!-- <li><a href="#">Form Validation</a></li>
-                        <li><a href="#">Form Wizard</a></li>
-                        <li><a href="#">Form Upload</a></li>
-                        <li><a href="#">Form Buttons</a></li> -->
+                        <li><a href="<?= base_url('user/surat3'); ?>">Surat KP/MKI</a></li>
+                        <li><a href="<?= base_url('user/surat4'); ?>">Surat Permohonan Pengunduran Diri </a></li>
+                        
                       </ul>
                   </li>
                   <li><a href="<?= base_url('user/daftar_wisuda'); ?>"><i class="fa fa-graduation-cap"></i> Daftar Wisuda </a></li>

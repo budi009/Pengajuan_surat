@@ -48,27 +48,39 @@
                       <thead>
                         <tr>
                           <th>No</th>
+                          <th>Nomor Surat</th>
                           <th>Nim</th>
                           <th>Nama</th>
                           <th>Prodi</th>
+                          <th>Semester</th>
                           <th>Lama Cuti</th>
                           <th>Mulai Cuti</th>
                           <th>Batas Cuti</th>         
-                          <th>alasan</th>                  
+                          <th>alasan</th> 
+                          <th>Action</th>           
                         </tr>
                         <?php
-                        $id = 1;
-                        foreach ($surat_cuti as $sc) {
+                        $no = 1;
+                        foreach ($data as $sc) {
                         ?>
                         <tr>
-                          <td><?php echo $id++ ?></td>
+                          <td><?php echo $no++ ?></td>
+                          <td><?php echo $sc->nomor_surat ?></td>
                           <td><?php echo $sc->nim ?></td>
                           <td><?php echo $sc->nama ?></td>
-                          <td><?php echo $sc->prodi ?></td>
+                          <td><?php echo $sc->prodi_id ?></td>
+                          <td><?php echo $sc->semester ?></td>
                           <td><?php echo $sc->lama_cuti ?></td>
                           <td><?php echo $sc->mulai_cuti ?></td>
                           <td><?php echo $sc->batas_cuti ?></td>         
                           <td><?php echo $sc->alasan ?></td>  
+                          <td>
+                           
+                            <a class="col-md-9 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsuratcuti/').$sc->id; ?>"> Edit</a>
+                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/suratcutipdf/').$sc->id; ?>"> Cetak</a>
+                            
+                          </td>
+                        
                         </tr>                  
                        <?php } ?>
                     </table>

@@ -52,27 +52,25 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select class="form-control">
-                            <option>Pilih Prodi</option>
-                            <option>Teknik Informatika</option>
-                            <option>Teknik Mesin</option>
-                            <option>Teknik Sipil</option>
-                            <option>Agribisnis</option>
-                            <option>Teknik Manufaktur Kapal</option>
-                            <option>Manajemen Bisnis Pariwisata</option>
-                            <option>Teknologi Pengolahan Hasil Ternak</option>
+                          <select name="prodi" id="prodi" class="form-control">
+                            <?php  
+                              foreach($prodi->result() as $pr){
+                                  echo "<option value".$pr->prodi_id.">".$pr->nama_prodi."</options>";
+                              }
+                            ?>
                           </select>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Semester <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select class="form-control">
-                            <option>Semester</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
+                          <select name="semester" id="semester" class="form-control">
+                            
+                            <?php  
+                              foreach($semester->result() as $sm){
+                                  echo "<option value".$sm->id_semester.">".$sm->semester."</options>";
+                              }
+                            ?>
                           </select>
                         </div>
                       </div>
@@ -81,10 +79,11 @@
                         <div class="col-md-6 col-sm-6 ">
                           <select class="form-control">
                             <option>Tahun Angkatan</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
+                            <?php  
+                              foreach($th_angkatan->result() as $ang){
+                                  echo "<option value".$ang->tha_id.">".$ang->tahun_angkatan."</options>";
+                              }
+                            ?>
                           </select>
                         </div>
                       </div>

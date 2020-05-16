@@ -73,7 +73,7 @@
                           <td><?php echo $id++ ?></td>
                           <td><?php echo $ak->nim ?></td>
                           <td><?php echo $ak->nama ?></td>
-                          <td><?php echo $ak->prodi ?></td>
+                          <td><?php echo $ak->prodi_id ?></td>
                           <td><?php echo $ak->semester ?></td>
                           <td><?php echo $ak->th_angkatan ?></td>
                           <td><?php echo $ak->th_akademik ?></td>
@@ -100,58 +100,7 @@
                 </div>
               </div>
 
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Surat Cuti</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>No</th>
-                          <th>Nim</th>
-                          <th>Nama</th>
-                          <th>Prodi</th>
-                          <th>Lama Cuti</th>
-                          <th>Mulai Cuti</th>
-                          <th>Batas Cuti</th>         
-                          <th>alasan</th>                  
-                        </tr>
-                        <!-- <?php
-                        $id = 1;
-                        foreach ($surat_cuti as $sc => $value) {
-                          # code...
-                        ?>
-                        <tr>
-                          <td><?php echo $id++ ?></td>
-                          <td><?php echo $sc->nim ?></td>
-                          <td><?php echo $sc->nama ?></td>
-                          <td><?php echo $sc->prodi ?></td>
-                          <td><?php echo $sc->lama_cuti ?></td>
-                          <td><?php echo $sc->mulai_cuti ?></td>
-                          <td><?php echo $sc->batas_cuti ?></td>         
-                          <td><?php echo $sc->alasan ?></td>  
-                        </tr>                  
-                       <?php } ?> -->
-                    </table>
-          
-          
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+              
 
           <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
@@ -187,74 +136,9 @@
                 </div>
               </div>
 
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Pelaksanaan Kerja Praktek</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>NIM</th>
-                          <th>Prodi</th>
-                          <th>Waktu Kerja Praktek</th>
-                          <th>Lokasi Kerja Praktek</th>
-                        </tr>
-                      
-                    </table>
-          
-          
-                  </div>
-                </div>
-              </div>
-            </div>
-                </div>
-              </div>
+             
 
-              <div class="col-md-12 col-sm-12 ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Surat Mengundurkan Diri</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                    </ul>
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
-                      <div class="row">
-                          <div class="col-sm-12">
-                            <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
-                        <tr>
-                          <th>NIM</th>
-                          <th>Prodi</th>
-                          <th>Semester</th>
-                          <th>Telp Mahasiswa</th>
-                          <th>Telp Orang Tua</th>
-                        </tr>
-                      
-                    </table>
-          
-          
-                  </div>
-                </div>
-              </div>
-            </div>
-                </div>
-              </div>
+              
 
     </div>
   </div>
