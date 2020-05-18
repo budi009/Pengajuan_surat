@@ -33,19 +33,19 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form action="<?= base_url('user/surat2'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?= base_url('user/surat3'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" > Nama <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama1" name="nama1" placeholder="Nama Anggota 1" required="required" class="form-control" value="<?= set_value('nama1'); ?>">
+                          <input type="text" id="nama1" name="nama1" placeholder="Nama Anggota 1" required="required" class="form-control" >
                         </div>
                       </div>
                       <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama2" name="nama2" placeholder="Nama Anggota 2" required="required" class="form-control" >
+                          <input type="text" id="nama2" name="nama2" placeholder="Nama Anggota 2" class="form-control" >
                         </div>
                       </div>
                       <div class="item form-group">
@@ -70,13 +70,13 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIM <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nim1" name="nim1" placeholder="Nim Anggota 1" required="required" class="form-control" value="<?= set_value('nim'); ?>">
+                          <input type="text" id="nim1" name="nim1" placeholder="Nim Anggota 1" required="required" class="form-control" >
                         </div>
                       </div>
                       <div class="item form-group">
                       <label class="col-form-label col-md-3 col-sm-3 label-align"></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nim2" name="nim2" placeholder="Nim Anggota 2" required="required" class="form-control" >
+                          <input type="text" id="nim2" name="nim2" placeholder="Nim Anggota 2" class="form-control" >
                         </div>
                       </div>
                       <div class="item form-group">

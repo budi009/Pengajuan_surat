@@ -47,13 +47,30 @@
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
+                          <th>No</th>
+                          <th>Nomor Surat</th>
                           <th>NIM</th>
+                          <th>Nama</th>
                           <th>Prodi</th>
-                          <th>Semester</th>
-                          <th>Telp Mahasiswa</th>
-                          <th>Telp Orang Tua</th>
+                          <th>Action</th>
                         </tr>
-                      
+                        <?php
+                        $no = 1;
+                        foreach ($surat_mundur as $sm) {
+                        ?>
+                        <tr>
+                          <td><?php echo $no++ ?></td>
+                          <td><?php echo $sm->nomor_surat ?></td>
+                          <td><?php echo $sm->nim ?></td>
+                          <td><?php echo $sm->nama ?></td>
+                          <td><?php echo $sm->prodi_id ?></td>
+                          <td>
+                          <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
+                      <a class="col-md-6 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
+                           <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a>
+                          </td>
+                          </tr>                  
+                       <?php } ?>
                     </table>
           
           

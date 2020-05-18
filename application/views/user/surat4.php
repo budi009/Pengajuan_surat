@@ -33,69 +33,65 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form action="<?= base_url('user/surat2'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?= base_url('user/surat4'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama Lengkap <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama" name="nama" required="required" class="form-control" value="<?= set_value('nama'); ?>">
+                          <input type="text" id="nama" name="nama" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIM <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nim" name="nim" required="required" class="form-control" value="<?= set_value('nim'); ?>">
+                          <input type="text" id="nim" name="nim" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <input type="text" id="prodi" name="prodi" class="form-control " value="<?= set_value('prodi'); ?>">
-                          <!-- <select class="form-control">
-                            <option>Pilih Prodi</option>
-                            <option>Teknik Informatika</option>
-                            <option>Teknik Mesin</option>
-                            <option>Teknik Sipil</option>
-                            <option>Agribisnis</option>
-                            <option>Teknik Manufaktur Kapal</option>
-                            <option>Manajemen Bisnis Pariwisata</option>
-                            <option>Teknologi Pengolahan Hasil Ternak</option>
-                          </select> -->
+                        <select name="prodi" id="prodi" class="form-control">
+                            <?php  
+                              foreach($prodi->result() as $pr){
+                                  echo "<option value".$pr->prodi_id.">".$pr->nama_prodi."</options>";
+                              }
+                            ?>
+                        </select>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Semester <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <input type="text" id="semester" name="semester" class="form-control "value="<?= set_value('semester'); ?>">
-                          <!-- <select class="form-control">
-                            <option>Semester</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select> -->
+                        <select name="semester" id="semester" class="form-control">
+                            
+                            <?php  
+                              foreach($semester->result() as $sm){
+                                  echo "<option value".$sm->id_semester.">".$sm->semester."</options>";
+                              }
+                            ?>
+                          </select>
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Telp/HP<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="hp1" name="hp1" placeholder="Mahasiswa" required="required" class="form-control" value="<?= set_value('cuti1'); ?>">
+                          <input type="text" id="hp1" name="hp1" placeholder="Mahasiswa" required="required" class="form-control" >
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" ></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="hp2" name="hp2" placeholder="Orang Tua/Wali" required="required" class="form-control" value="<?= set_value('cuti1'); ?>">
+                          <input type="text" id="hp2" name="hp2" placeholder="Orang Tua/Wali" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alasan Mengundurkan Diri<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <textarea type="text" id="alasankeluar" name="alasankeluar" required="required" class="form-control" value="<?= set_value('cuti4'); ?>"></textarea>
+                          <textarea type="text" id="alasankeluar" name="alasankeluar" required="required" class="form-control""></textarea>
                         </div>
                       </div>
                       

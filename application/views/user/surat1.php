@@ -33,13 +33,13 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                    <form action="<?= base_url('user/surat1'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama Lengkap <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama" required="required" class="form-control ">
+                          <input type="text" id="nama" name="nama" required="required" class="form-control ">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -77,8 +77,7 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Tahun Angkatan <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select class="form-control">
-                            <option>Tahun Angkatan</option>
+                          <select id="th_angkatan" name="th_angkatan" class="form-control">
                             <?php  
                               foreach($th_angkatan->result() as $ang){
                                   echo "<option value".$ang->tha_id.">".$ang->tahun_angkatan."</options>";
@@ -90,8 +89,7 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Tahun Akademik <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select class="form-control">
-                            <option>Tahun Akademik</option>
+                          <select id="th_akademik" name="th_akademik" class="form-control">
                             <option>2017</option>
                             <option>2018</option>
                             <option>2019</option>
@@ -150,32 +148,39 @@
                       <h2>KEPERLUAN SURAT</h2>
                           <div class="radio col-md-2">
                             <label>
-                              <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Persyaratan Pengurusan Tunjangan Anak
+                              <input type="radio" checked="" value="Persyaratan Pengurusan Tunjangan Anak" id="optionsRadios" name="optionsRadios"> Persyaratan Pengurusan Tunjangan Anak
                             </label>
                           </div>
                           <div class="radio col-md-2">         
                             <label>
-                              <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Persyaratan Pengurusan Pensiun
+                              <input type="radio" value="Persyaratan Pengurusan Pensiun" id="optionsRadios" name="optionsRadios"> Persyaratan Pengurusan Pensiun
                             </label>
                           </div>
                           <div class="radio col-md-2">
                             <label>
-                              <input type="radio" value="option3" id="optionsRadios3" name="optionsRadios"> Persyaratan Pengurusan BPJS
+                              <input type="radio" value="Persyaratan Pengurusan BPJS" id="optionsRadios" name="optionsRadios"> Persyaratan Pengurusan BPJS
                             </label>
                           </div>
                           <div class="radio col-md-2">
                             <label>
-                              <input type="radio" value="option4" id="optionsRadios4" name="optionsRadios"> Beasiswa Pemerintah Daerah/Kota.........
+                              <input type="radio" value="Beasiswa Pemerintah Daerah/Kota" id="optionsRadios" name="optionsRadios"> Beasiswa Pemerintah Daerah/Kota.........
                             </label>
                           </div>
                           <div class="radio col-md-2">
                             <label>
-                              <input type="radio" value="option5" id="optionsRadios5" name="optionsRadios"> Kegiatan Lomba..........
+                              <input type="radio"  id="Kegiatan Lomba" name="optionsRadios"> Kegiatan Lomba
                             </label>
                           </div>
-                          <div class="radio col-md-2">
+
+                          <br><br>
+                          <div class="radio col-md-1">
                             <label>
-                              <input type="radio" value="option6" id="optionsRadios6" name="optionsRadios"> Lainnya
+                              <input value="<?= set_value('lainnya'); ?>" type="radio" id="optionsRadios" name="optionsRadios"> Lainnya
+                            </label>
+                          </div>
+                          <div class="item form-group">
+                            <label>
+                              <input  type="text" id="lainnya" name="lainnya">
                             </label>
                           </div>
                           <br>

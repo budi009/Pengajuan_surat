@@ -32,7 +32,7 @@
               <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Surat Aktif Kuliah</h2>
+                    <h2>Detail Surat Aktif Kuliah</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -42,20 +42,81 @@
                   </div>
                   <div class="x_content">
                       <div class="row">
-                          <div class="col-sm-12">
+                          <div class="col-sm-8">
                             <div class="card-box table-responsive">
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
-                          <th>No</th>
-                          <th>Nomor Surat</th>
-                          <th>NIM</th>
+                          <th>Nama</th>
+                          <td><?php echo $detail->nama ?></td>
+                        </tr>
+                        <tr>
+                          <th>Nim</th>
+                          <td><?php echo $detail->nim ?></td>
+                        </tr>
+                        <tr>
+                          <th>Program Studi</th>
+                          <td><?php echo $detail->prodi_id ?></td>
+                        </tr>
+                        <tr>
+                          <th>Semester</th>
+                          <td><?php echo $detail->semester ?></td>
+                        </tr>
+                        <tr>
+                          <th>Tahun Angkatan</th>
+                          <td><?php echo $detail->th_angkatan ?></td>
+                        </tr>
+                        <tr>
+                          <th>Tahun Akademik</th>
+                          <td><?php echo $detail->th_akademik ?></td>
+                        </tr>
+                        <tr>
+                          <th>Nama Orang Tua</th>
+                          <td><?php echo $detail->nama_ortu ?></td>
+                        </tr>
+                        <tr>
+                          <th>Pekerjaan Orang Tua</th>
+                          <td><?php echo $detail->pekerjaan_ortu ?></td>
+                        </tr>
+                        <tr>
+                          <th>NIP</th>
+                          <td><?php echo $detail->nip_ortu ?></td>
+                        </tr>
+                        <tr>
+                          <th>Jabatan</th>
+                          <td><?php echo $detail->jabatan ?></td>
+                        </tr>
+                        <tr>
+                          <th>Instansi</th>
+                          <td><?php echo $detail->instansi ?></td>
+                        </tr>
+                        <tr>
+                          <th>Alamat Orang Tua</th>
+                          <td><?php echo $detail->alamat_ortu ?></td>
+                        </tr>
+                        <tr>
+                          <th>Keperluan Surat Aktif Kuliah</th>
+                          <td><?php echo $detail->keperluan?></td>
+                        </tr>
+                        <tr>
+                          <th>Foto copy KTP Orang Tua</th>
+                          <td><?php echo $detail->fc_ktp_ortu  ?></td>
+                        </tr>
+                        <tr>
+                          <th>Foto copy KTM Mahasiswa</th>
+                          <td><?php echo $detail->fc_ktm_mhs  ?></td>
+                        </tr>
+                        <tr>
+                          <th>Buku Pedoman Akademik</th>
+                          <td><?php echo $detail->fc_buku_pedoman  ?></td>
+                        </tr>
+                        <!-- <th>NIM</th>
                           <th>Nama</th>
                           <th>Prodi</th>
                           <th>Semester</th>
                           <th>Tahun Angkatan</th>
                           <th>Tahun Akademik</th>
-                          <!-- <th>Nama Orang Tua</th>
+                          <th>Nama Orang Tua</th>
                           <th>Pekerjaan Orang Tua</th>
                           <th>Nip</th>
                           <th>Jabatan</th>
@@ -64,41 +125,9 @@
                           <th>Keperluan</th>
                           <th>Fc Ktp Orang Tua</th>
                           <th>Fc Ktm Mahasiswa</th>
-                          <th>Buku Pedoman Akademik</th> -->
-                          <th>Action</th>
-                        </tr>
-                        <?php
-                        $id = 1;
-                        foreach($surat_aktif_kuliah as $ak) {
-                        ?>
-                        <tr>
-                          <td><?php echo $id++ ?></td>
-                          <td><?php echo $ak->nomor_surat ?></td>
-                          <td><?php echo $ak->nim ?></td>
-                          <td><?php echo $ak->nama ?></td>
-                          <td><?php echo $ak->prodi_id ?></td>
-                          <td><?php echo $ak->semester ?></td>
-                          <td><?php echo $ak->th_angkatan ?></td>
-                          <td><?php echo $ak->th_akademik ?></td>
-                          <!-- <td><?php echo $ak->nama_ortu ?></td>         
-                          <td><?php echo $ak->pekerjaan_ortu ?></td>                    
-                          <td><?php echo $ak->nip_ortu ?></td>                    
-                          <td><?php echo $ak->jabatan ?></td>                    
-                          <td><?php echo $ak->instansi ?></td>                    
-                          <td><?php echo $ak->alamat_ortu ?></td>                    
-                          <td><?php echo $ak->keperluan ?></td>                    
-                          <td><?php echo $ak->fc_ktp_ortu ?></td>                    
-                          <td><?php echo $ak->fc_ktm_mhs ?></td>                    
-                          <td><?php echo $ak->fc_buku_pedoman ?></td> -->
-                          <td>
-                           
-                          <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/').$ak->id; ?>"> Detail</a>
-                      <a class="col-md-9 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsurataktif/').$ak->id; ?>"> Edit</a>
-                           <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/').$ak->id; ?>"> Cetak</a>
-                            
-             </td>    
-                        </tr>                                  
-                       <?php } ?>
+                          <th>Buku Pedoman Akademik</th>
+                          <th>Action</th> -->
+                       
                       
                     </table>
 					

@@ -29,10 +29,10 @@
               </div>
             </div>
 
-            <div class="col-md-12 col-sm-12 ">
+              <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Pelaksanaan Kerja Praktek</h2>
+                    <h2>Detail Surat Mengundurkan Diri</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -42,56 +42,56 @@
                   </div>
                   <div class="x_content">
                       <div class="row">
-                          <div class="col-sm-12">
+                          <div class="col-sm-8">
                             <div class="card-box table-responsive">
                     <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
-
                         <tr>
-                          <th>No</th>
-                          <th>Nomor Surat</th>
                           <th>Nama</th>
-                          <th>NIM</th>
-                          <!-- <th>Prodi</th> -->
-                          <th>Waktu Kerja Praktek</th>
-                          <th>Lokasi Kerja Praktek</th>
-                          <th>Action</th>
+                          <td><?php echo $detail->nama ?></td>
                         </tr>
-                        <?php
-                        $no = 1;
-                        foreach ($surat_kp as $kp) {
-                        ?>
                         <tr>
-                            <td><?php echo $no++ ?></td>
-                            <td><?php echo $kp->nomor_surat ?></td>
-                          <td>
-                            <?php echo $kp->nama ?><br>
-                            <?php echo $kp->nama2 ?><br>
-                            <?php echo $kp->nama3 ?><br>
-                            <?php echo $kp->nama4 ?><br>
-                            <?php echo $kp->nama5 ?>
-                        </td>
-                          <td>
-                            <?php echo $kp->nim ?><br>
-                            <?php echo $kp->nim2 ?><br>
-                            <?php echo $kp->nim3 ?><br>
-                            <?php echo $kp->nim4 ?><br>
-                            <?php echo $kp->nim5 ?>
-                        </td>
-                          <td><?php echo $kp->tempat ?></td>
-                          <td><?php echo $kp->alamat_tempat ?></td>
-                          <td>
-                          <a class="col-md-9 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsuratkp/').$kp->id_kp; ?>"> Edit</a>
-                          <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/suratkppdf/').$kp->id_kp; ?>"> Cetak</a>
-                          </td>
+                          <th>Nim</th>
+                          <td><?php echo $detail->nim ?></td>
                         </tr>
-                        <?php } ?>
+                        <tr>
+                          <th>Program Studi</th>
+                          <td><?php echo $detail->prodi_id ?></td>
+                        </tr>
+                        <tr>
+                          <th>Semester</th>
+                          <td><?php echo $detail->semester ?></td>
+                        </tr>
+                        <tr>
+                          <th>Nomor Telp/HP Mahasiswa</th>
+                          <td><?php echo $detail->telp_mhs ?></td>
+                        </tr>
+                        <tr>
+                          <th>Nomor Telp/HP Orang Tua</th>
+                          <td><?php echo $detail->telp_ortu ?></td>
+                        </tr>
+                        <tr>
+                          <th>Alasan Mengundurkan Diri</th>
+                          <td><?php echo $detail->alasan ?></td>
+                        </tr>
+                        
                     </table>
-          
-          
+					
+					
                   </div>
                 </div>
               </div>
             </div>
                 </div>
-              </div>
+              </div>        
+
+    </div>
+  </div>
+  </div>
+          <!-- /top tiles -->
+
+
+           
+    <!-- admin/template/dashboard_footer -->
+              
+            

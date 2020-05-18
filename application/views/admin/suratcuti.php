@@ -77,7 +77,7 @@
                           <td>
                            
                             <a class="col-md-9 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsuratcuti/').$sc->id; ?>"> Edit</a>
-                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/suratcutipdf/').$sc->id; ?>"> Cetak</a>
+                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/').$sc->id; ?>"> Cetak</a>
                             
                           </td>
                         

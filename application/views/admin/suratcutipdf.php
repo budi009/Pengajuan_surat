@@ -122,6 +122,13 @@
             </tr>
         </table>
 
+        <!-- <?php 
+      $qrCode = new Endroid\QrCode\QrCode('BudiRahmawan1234');
+      $qrCode->writeFile('assets/qrcode'.'/qrcode.jpg');
+      ?>
+      <img style="width: 100px" src="assets/qrcode/qrcode.png" alt=""> -->
+        
+
     </body>
 
 </html>

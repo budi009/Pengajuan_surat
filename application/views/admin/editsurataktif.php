@@ -13,41 +13,41 @@
           <div class="col-lg-12">
             <div class="page-title">
               <div class="title_left">
-                <h3>Edit Surat Cuti</h3>
+                <h3>Edit Surat Aktif Kuliah</h3>
               </div>
 
                 </div>
                 <section>
-    <?php foreach($surat_cuti as $es) { ?>
-    <form action="<?= base_url('admin/updatesuratcuti'); ?>" method="post">
+    <?php foreach($surat_aktif_kuliah as $ak) { ?>
+    <form action="<?= base_url('admin/updatesurataktif'); ?>" method="post">
     
 <div class="form-group row">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nomor Surat
             </label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $es->nomor_surat ?>">
+              <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $ak->nomor_surat ?>">
             </div>
           </div>
 <div class="form-group row">
         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM
         </label>
         <div class="col-md-6 col-sm-6 ">
-          <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $es->id ?>">
-          <input type="text" id="nim" name="nim" class="form-control" value="<?php echo $es->nim ?>">
+          <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $ak->id ?>">
+          <input type="text" id="nim" name="nim" class="form-control" value="<?php echo $ak->nim ?>">
         </div>
       </div>
 <div class="form-group row">
         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama Lengkap
         </label>
         <div class="col-md-6 col-sm-6 ">
-          <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $es->nama ?>">
+          <input type="text" id="nama" name="nama" class="form-control" value="<?php echo $ak->nama ?>">
         </div>
       </div>
 <div class="form-group row">
         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Prodi
         </label>
         <div class="col-md-6 col-sm-6 ">
-          <input type="text" id="prodi" name="prodi" class="form-control" value="<?php echo $es->prodi_id ?>">
+          <input type="text" id="prodi" name="prodi" class="form-control" value="<?php echo $ak->prodi_id ?>">
         </div>
       </div> 
       <div class="ln_solid"></div>

@@ -1,13 +1,12 @@
 <?php
 
-Class surat_aktif_kuliah extends CI_Model{
+Class surat_mundur extends CI_Model{
 
-    function aktif_kuliah(){
-            return $this->db->get('surat_aktif_kuliah');
+    function mundur(){
+            return $this->db->get('surat_mundur');
     }
-
     function detail_data($id = NULL){
-        $query = $this->db->get_where('surat_aktif_kuliah', array('id'=>$id))->row();
+        $query = $this->db->get_where('surat_mundur', array('mundur_id'=>$id))->row();
         return $query;
     }
     function edit_data($where,$table){
@@ -17,7 +16,6 @@ Class surat_aktif_kuliah extends CI_Model{
         $this->db->where($where);
         $this->db->update($table,$data);
     }
-
 
 }
 
