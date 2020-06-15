@@ -45,7 +45,7 @@ class User extends CI_Controller
         $this->form_validation->set_rules('instansi_ortu','instansi', 'trim');
         $this->form_validation->set_rules('alamat_ortu','Alamat', 'required|trim');
         $this->form_validation->set_rules('optionsRadios','Pilihan', 'required|trim');
-        $this->form_validation->set_rules('lainnya','Pilihan', 'required|trim');
+        $this->form_validation->set_rules('lainnya','Pilihan', 'trim');
 
         if ($this->form_validation->run() == false) {
         $this->load->view('user/template/dashboard_header');
@@ -85,7 +85,7 @@ class User extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
         $data2['data'] = $this->m_relasi->get_relasi();
         $data2['prodi']= $this->m_relasi->get_prodi();
-        
+        $data2['semester']= $this->m_relasi->get_semester();
         $this->form_validation->set_rules('nim','NIM', 'required|trim');
         $this->form_validation->set_rules('nama','Nama', 'required|trim');
         $this->form_validation->set_rules('prodi','Prodi', 'required|trim');
@@ -224,14 +224,83 @@ class User extends CI_Controller
         public function daftar_wisuda()
         {
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data2['prodi']= $this->m_relasi->get_prodi();
+            
+
+            $this->form_validation->set_rules('nim','NIM', 'required|trim');
+            $this->form_validation->set_rules('nama','Nama', 'required|trim');
+            $this->form_validation->set_rules('nik','NIK', 'required|trim');
+            $this->form_validation->set_rules('prodi','Prodi', 'required|trim');
+            $this->form_validation->set_rules('jk','Jenis Kelamin', 'required|trim');
+            $this->form_validation->set_rules('ttl1','Tempat Lahir', 'required|trim');
+            $this->form_validation->set_rules('ttl2','Tanggal Lahir', 'required|trim');
+            $this->form_validation->set_rules('hp','HP', 'required|trim');
+            $this->form_validation->set_rules('kp1','KP Indo', 'required|trim');
+            $this->form_validation->set_rules('kp2','KP Eng', 'required|trim');
+            $this->form_validation->set_rules('ta1','TA Indo', 'required|trim');
+            $this->form_validation->set_rules('ta2','TA Eng', 'required|trim');
+            $this->form_validation->set_rules('alamat','Alamat', 'required|trim');
+            $this->form_validation->set_rules('sosmed','sosmed', 'required|trim');
             
             
+
+            if ($this->form_validation->run() == false) {
             $this->load->view('user/template/dashboard_header');
             $this->load->view('user/template/dashboard_side', $data);
             $this->load->view('user/template/dashboard_top', $data);
-            $this->load->view('user/daftar_wisuda', $data);
+            $this->load->view('user/daftar_wisuda', $data2);
             $this->load->view('user/template/dashboard_footer');
-            
+            }else{
+
+                $foto   = $_FILES['foto'];
+                if ($foto = ''){}else{
+                    $config['upload_path']      ='assets/img';
+                    $config['allowed_types']      ='jpg|png|gif';
+    
+                    $this->load->library('upload',$config);
+                    if(!$this->upload->do_upload('foto')){
+    
+                        echo "Gambar Salah";
+                    }else{
+                        $foto=$this->upload->data('file_name');
+                    }
+    
+    
+                }
+            $data2 = [
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'nim' => htmlspecialchars($this->input->post('nim', true)),
+                'nik_ktp' => htmlspecialchars($this->input->post('nik', true)),
+                'prodi_id' => htmlspecialchars($this->input->post('prodi', true)),
+                'jns_kelamin' => htmlspecialchars($this->input->post('jk', true)),
+                'tempat_lahir' => htmlspecialchars($this->input->post('ttl1', true)),
+                'tanggal_lahir' => htmlspecialchars($this->input->post('ttl2', true)),
+                'no_hp' => htmlspecialchars($this->input->post('hp', true)),
+                'kp_indo' => htmlspecialchars($this->input->post('kp1', true)),
+                'kp_ing' => htmlspecialchars($this->input->post('kp2', true)),
+                'pa_indo' => htmlspecialchars($this->input->post('ta1', true)),
+                'pa_ing' => htmlspecialchars($this->input->post('ta2', true)),
+                'alamat' => htmlspecialchars($this->input->post('alamat', true)),
+                'sosmed' => htmlspecialchars($this->input->post('sosmed', true)),
+                'foto' => $foto
+            ];
+            $this->db->insert('daftar_wisuda', $data2);
+            redirect('user/daftar_wisuda');
+            }
     }
+
+        public function kuisioner(){
+
+            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data2['dosen']= $this->m_relasi->get_dosen();
+            $data2['prodi']= $this->m_relasi->get_prodi();
+
+            $this->load->view('user/template/dashboard_header');
+            $this->load->view('user/template/dashboard_side', $data);
+            $this->load->view('user/template/dashboard_top', $data);
+            $this->load->view('user/kuisioner', $data2);
+            $this->load->view('user/template/dashboard_footer');
+
+        }
     
 }

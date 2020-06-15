@@ -35,7 +35,7 @@
                       </ul>
                   </li>
                   <li><a href="<?= base_url('user/daftar_wisuda'); ?>"><i class="fa fa-graduation-cap"></i> Daftar Wisuda </a></li>
-                  <li><a ><i class="fa fa-book"></i> Kuisioner </a></li>
+                  <li><a href="<?= base_url('user/kuisioner'); ?>"><i class="fa fa-book"></i> Kuisioner </a></li>
                   <li><a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>
                 </ul>
               </div>

@@ -66,14 +66,21 @@
                           <td><?php echo $sm->prodi_id ?></td>
                           <td>
                           <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
-                      <a class="col-md-6 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
+                      <a class="col-md-6 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
                            <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a>
                           </td>
                           </tr>                  
                        <?php } ?>
                     </table>
           
-          
+                    <!-- <p style="text-align: center;">
+                      <span style="line-height: 1.3; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                        SURAT PENGUNDURAN DIRI MAHASISWA
+                      </span> <br>
+                      <span style="line-height: 1; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                        Nomor : <?php echo $sm->nomor_surat ?> /PL36/KM.00.00/2019
+                     </span> 
+                    </p> -->
                   </div>
                 </div>
               </div>

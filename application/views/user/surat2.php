@@ -73,14 +73,14 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Semester <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <input type="text" id="semester" name="semester" class="form-control "value="<?= set_value('semester'); ?>">
-                          <!-- <select class="form-control">
-                            <option>Semester</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                          </select> -->
+                        <select name="semester" id="semester" class="form-control">
+                            
+                            <?php  
+                              foreach($semester->result() as $sm){
+                                  echo "<option value".$sm->id_semester.">".$sm->semester."</options>";
+                              }
+                            ?>
+                          </select>
                         </div>
                       </div>
                       <div class="item form-group">

@@ -93,7 +93,7 @@
                           <td>
                            
                           <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/').$ak->id; ?>"> Detail</a>
-                      <a class="col-md-9 btn btn-primary fa fa-edit " href="<?= base_url('admin/editsurataktif/').$ak->id; ?>"> Edit</a>
+                      <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsurataktif/').$ak->id; ?>"> Edit</a>
                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/').$ak->id; ?>"> Cetak</a>
                             
              </td>    

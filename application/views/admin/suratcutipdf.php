@@ -36,18 +36,14 @@
         <hr class="line-title">
 
     
-        <table align="center">
-            <tr>
-                <td>
-                    <span style=" line-height: 1.5; font-weight: bold; font-family: 'Times New Roman', Times, serif">
-                    SURAT CUTI AKADEMIK
+        <p style="text-align: center;">
+        <span style="line-height: 1.3; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                   SURAT CUTI AKADEMIK
                     </span> <br>
-                    <span>
-                        Nomor : <?php echo $data->nomor_surat ?> /PL36/PK.05.00/2019
-                    </span>
-                </td>
-            </tr>
-        </table>
+                    <span style="line-height: 1; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                   Nomor : <?php echo $data->nomor_surat ?> /PL36/PK.05.00/2019
+                </span> 
+        </p>
 
         <p style="margin-left: 50px; margin-right: 50px; text-align: justify">
             Menunjuk surat saudara perihal ijin Cuti Akademik, maka sesuai dengan peraturan yang berlaku, 
@@ -121,6 +117,30 @@
                 </td>
             </tr>
         </table>
+
+        <p style="margin-left: 50px; margin-right: 50px; text-align: justify">
+        Dengan Ketentuan
+        </p>
+
+        <p style="margin-left: 50px; margin-right: 50px; text-align: justify">
+        1. Ijin Cuti Akademik diberikan selama : <br>
+        2. Mahasiswa yang bersangkutan diharuskan mendaftar kembali / aktif studi pada permulaan
+        semester .. tahun akademik .... degan menunjukkan Surat Cuti Akdemik ini. <br>
+        3. Bilamana mahasiswa yang bersangkutan tidak mendaftar kembali / aktif studi pada waktu
+        yang ditentukan, maka waktu tersebut dihitung termasuk masa studi.
+
+        </p>
+
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+        Banyuwangi, ............ 
+        <br style="line-height: 1;">
+        </p>
+        
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+        Direktur, 
+        <br style="line-height: 1;">
+        </p>
+
 
         <!-- <?php 
       $qrCode = new Endroid\QrCode\QrCode('BudiRahmawan1234');

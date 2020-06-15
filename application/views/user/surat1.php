@@ -153,7 +153,7 @@
                           </div>
                           <div class="radio col-md-2">         
                             <label>
-                              <input type="radio" value="Persyaratan Pengurusan Pensiun" id="optionsRadios" name="optionsRadios"> Persyaratan Pengurusan Pensiun
+                              <input  type="radio" value="Persyaratan Pengurusan Pensiun" id="optionsRadios" name="optionsRadios"> Persyaratan Pengurusan Pensiun
                             </label>
                           </div>
                           <div class="radio col-md-2">
@@ -168,7 +168,7 @@
                           </div>
                           <div class="radio col-md-2">
                             <label>
-                              <input type="radio"  id="Kegiatan Lomba" name="optionsRadios"> Kegiatan Lomba
+                              <input type="radio" value="Kegiatan Lomba" id="Kegiatan Lomba" name="optionsRadios"> Kegiatan Lomba
                             </label>
                           </div>
 

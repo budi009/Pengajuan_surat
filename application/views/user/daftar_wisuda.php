@@ -33,13 +33,13 @@
                   </div>
                   <div class="x_content">
                     <br />
-                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                   <?php echo form_open_multipart('user/daftar_wisuda'); ?>
 
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama sesuai ijazah terakhir <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama" required="required" class="form-control ">
+                          <input type="text" id="nama" name="nama" required="required" class="form-control ">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -59,15 +59,12 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select class="form-control">
-                            <option>Pilih Prodi</option>
-                            <option>Teknik Informatika</option>
-                            <option>Teknik Mesin</option>
-                            <option>Teknik Sipil</option>
-                            <option>Agribisnis</option>
-                            <option>Teknik Manufaktur Kapal</option>
-                            <option>Manajemen Bisnis Pariwisata</option>
-                            <option>Teknologi Pengolahan Hasil Ternak</option>
+                        <select name="prodi" id="prodi" class="form-control">
+                            <?php  
+                              foreach($prodi->result() as $pr){
+                                  echo "<option value".$pr->prodi_id.">".$pr->nama_prodi."</options>";
+                              }
+                            ?>
                           </select>
                         </div>
                       </div>
@@ -79,10 +76,17 @@
                         </div>
                       </div>
                       <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tempat Tanggal Lahir <span class="required">*</span>
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tempat Lahir <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="ttl" name="ttl" required="required" class="form-control">
+                          <input type="text" id="ttl1" name="ttl1" required="required" class="form-control">
+                        </div>
+                      </div>
+                      <div class="item form-group">
+                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tanggal Lahir <span class="required">*</span>
+                        </label>
+                        <div class="col-md-6 col-sm-6 ">
+                          <input type="date" id="ttl2" name="ttl2" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -138,7 +142,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Foto<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="file" id="sosmed" name="sosmed" required="required" class="form-control">
+                          <input type="file" id="foto" name="foto"  required="required" class="form-control">
                         </div>
                       </div>
                       
@@ -148,7 +152,7 @@
                           <button type="submit" class="btn btn-success">Submit</button>
                         </div>
                       </div>
-                    </form>
+                    <?php echo form_close(); ?>
                   </div>
                 </div>
               </div>

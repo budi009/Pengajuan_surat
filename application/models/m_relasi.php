@@ -19,4 +19,7 @@ Class m_relasi extends CI_Model{
     function get_th_angkatan(){
         return $this->db->get('tahun_angkatan');
     }
+    function get_dosen(){
+        return $this->db->get('dosen');
+    }
 }
