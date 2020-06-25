@@ -1,15 +1,15 @@
-                    <!-- admin/template/dashboard_header -->
+                        <!-- adminprodi/template/dashboard_header -->
 
           <!-- sidebar menu -->
-                     <!-- admin/template/dasboard_side -->
+                     <!-- adminprodi/template/dasboard_side -->
           <!-- /sidebar menu -->
 
           <!-- top navigation -->
-                     <!-- admin/template/dasboard_top -->
+                   <!-- adminprodi/template/dasboard_top -->
           <!-- /top navigation -->
 
         <!-- page content -->
-    <div class="right_col" role="main">
+        <div class="right_col" role="main">
           <!-- top tiles -->
           <div class="row" style="display: inline-block;" >
           <div class="tile_count">
@@ -45,28 +45,8 @@
             </div>
           </div>
         </div>
-
-
-<script type="text/javascript">
- document.getElementById("btn").disabled = true;
-</script>
-        <a class="col-md-9 btn btn-primary  fa fa-search " onclick="" href="<?= base_url('admin/QRcode'); ?>" id="btn" type="submit"> Qrcode</a>
           <!-- /top tiles -->
-      
-          <img style="width: 100px" src="assets/qrcode/qrcode.jpg" alt="">
-          <a class="col-md-9 btn btn-primary  fa fa-search " onclick="" href="<?= base_url('admin/QRcode'); ?>" id="btn" type="submit"> Qrcode</a>
-            <!-- /top tiles -->
-        
-            <img style="width: 100px" src="<?= base_url('assets/qrcode/') . $user = $this->session->userdata('nama_user') .'jpg' ?>" alt="">
-          <a class="col-md-9 btn btn-primary  fa fa-search " onclick="" href="<?= base_url('admin/QRcode'); ?>" id="btn" type="submit"> Qrcode</a>
-            <!-- /top tiles -->
-        
-            <img style="width: 100px" src="<?= base_url('assets/qrcode/') . $user = $this->session->userdata('nama_user') .'.jpg' ?>" alt="">
-        </div>
-     
+      </div>
+
+<!-- adminprodi/template/dashboard_footer -->
           
-      <!-- admin/template/dashboard_footer -->
-
-      
-
-

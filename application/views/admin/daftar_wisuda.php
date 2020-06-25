@@ -1,135 +1,12 @@
-<body class="nav-md">
-    <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-institution"></i> <span>Akademik</span></a>
-            </div>
+                    <!-- admin/template/dashboard_header -->
 
-            <div class="clearfix"></div>
+          <!-- sidebar menu -->
+                     <!-- admin/template/dasboard_side -->
+          <!-- /sidebar menu -->
 
-            <!-- menu profile quick info -->
-            <div class="profile clearfix">
-              <div class="profile_pic">
-                <img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <ul class="nav side-menu">
-                  <li><a><i class="fa fa-home"></i> Home </a></li>
-                  <li><a><i class="fa fa-envelope"></i> Surat Pengajuan </a></li>
-                  <li><a><i class="fa fa-graduation-cap"></i> Pendaftar Wisuda </a></li>
-                  <li><a><i class="fa fa-book"></i> Kuisioner </a></li>
-                  <li><a><i class="fa fa-sign-out"></i> Log Out </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-              <nav class="nav navbar-nav">
-              <ul class=" navbar-right">
-                <li class="nav-item dropdown open" style="padding-left: 15px;">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                    <img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="">John Doe
-                  </a>
-                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="javascript:;"> Profile</a>
-                      <a class="dropdown-item"  href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                  <a class="dropdown-item"  href="javascript:;">Help</a>
-                    <a class="dropdown-item"  href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                  </div>
-                </li>
-
-                <li role="presentation" class="nav-item dropdown open">
-                  <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="dropdown-item">
-                        <span class="image"><img src="<?= base_url('assets'); ?>/production/images/img.jpg" alt="Profile Image" /></span>
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <div class="text-center">
-                        <a class="dropdown-item">
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
+          <!-- top navigation -->
+                   <!-- admin/template/dasboard_top -->
+          <!-- /top navigation -->
 
         <!-- page content -->
         
@@ -137,64 +14,80 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Pendaftar Wisuda</h3>
+                <h3>Wisuda</h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Search</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
+             
             </div>
 
-              <div class="col-md-12 col-sm-12 ">
+            <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Tahun Angkatan</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                    </ul>
+                    <h2>Pendaftar</small></h2>
+                    
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                      <thead>
+
+                    <table id="mydata" class="table table-striped table-bordered bulk_action" style="width:100%">
+                    <thead>
                         <tr>
+                          <th>No</th>
                           <th>NIM</th>
-                          <th>NIK KTP</th>
+                          <th>Nama</th>
                           <th>Prodi</th>
-                          <th>Jenis Kelamin</th>
-                          <th>Tempat Lahir</th>
-                          <th>Tanggal Lahir</th>
-                          <th>No HP</th>
-                          <th>Tgl Sidang Akhir</th>
-                          <th>Judul KP (indo)</th>
-                          <th>Judul KP (eng)</th>
-                          <th>Judul PA (indo)</th>
-                          <th>Judul PA (eng)</th>
-                          <th>Alamat</th>
-                          <th>Foto</th>
+                          <!-- <th>Semester</th>
+                          <th>Tahun Angkatan</th>
+                          <th>Tahun Akademik</th> -->
+ 
+                          <th>Action</th>
                         </tr>
-                      
+                    </thead>
+                    <?php
+                        $id = 1;
+                        foreach($wisuda as $w) {
+                        ?>
+                        <tr>
+                          <td><?php echo $id++ ?></td>
+                          <td><?php echo $w->nim ?></td>
+                          <td><?php echo $w->nama ?></td>
+                          <td><?php echo $w->prodi_id ?></td>
+                          <!-- <td><?php echo $ak->semester ?></td>
+                          <td><?php echo $ak->th_angkatan ?></td>
+                          <td><?php echo $ak->th_akademik ?></td> -->
+                          <!-- <td><?php echo $ak->nama_ortu ?></td>         
+                          <td><?php echo $ak->pekerjaan_ortu ?></td>                    
+                          <td><?php echo $ak->nip_ortu ?></td>                    
+                          <td><?php echo $ak->jabatan ?></td>                    
+                          <td><?php echo $ak->instansi ?></td>                    
+                          <td><?php echo $ak->alamat_ortu ?></td>                    
+                          <td><?php echo $ak->keperluan ?></td>                    
+                          <td><?php echo $ak->fc_ktp_ortu ?></td>                    
+                          <td><?php echo $ak->fc_ktm_mhs ?></td>                    
+                          <td><?php echo $ak->fc_buku_pedoman ?></td> -->
+                          <td>
+<!--                            
+                          <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/').$ak->id; ?>"> Detail</a>
+                      <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsurataktif/').$ak->id; ?>"> Edit</a>
+                           <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/').$ak->id; ?>"> Cetak</a>
+                             -->
+             </td>    
+                        </tr>                                  
+                       <?php } ?>
+                     
                     </table>
-					
-					
                   </div>
-                </div>
+                  </div>
               </div>
             </div>
                 </div>
               </div>
+ 
+
+              
 
     </div>
   </div>
@@ -203,15 +96,14 @@
 
 
            
-                <!-- end of weather widget -->
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
+    <!-- admin/template/dashboard_footer -->
+              
+       <script >
 
-        <!-- footer content -->
-        
-	
-  </body>
-</html>
+      $(document).ready(function(){
+
+            $('#mydata').DataTable();
+
+      });
+
+</script>     

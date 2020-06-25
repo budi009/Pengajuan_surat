@@ -57,9 +57,9 @@
                           <td><?php echo $sm->nama ?></td>
                           <td><?php echo $sm->prodi_id ?></td>
                           <td>
-                          <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
+                          <!-- <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
                       <a class="col-md-6 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
-                           <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a>
+                           <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a> -->
                           </td>
                           </tr>                  
                        <?php } ?>

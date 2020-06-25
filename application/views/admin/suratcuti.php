@@ -17,16 +17,7 @@
                 <h3>Surat Pengajuan Mahasiswa</h3>
               </div>
 
-              <div class="title_right">
-                <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search for...">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Search</button>
-                    </span>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
               <div class="col-md-12 col-sm-12 ">
@@ -44,11 +35,11 @@
                       <div class="row">
                           <div class="col-sm-12">
                             <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table id="mydata" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Nomor Surat</th>
+                          <th>No Surat</th>
                           <th>Nim</th>
                           <th>Nama</th>
                           <th>Prodi</th>
@@ -56,9 +47,10 @@
                           <th>Lama Cuti</th>
                           <th>Mulai Cuti</th>
                           <th>Batas Cuti</th>         
-                          <th>alasan</th> 
+                          <!-- <th>alasan</th>  -->
                           <th>Action</th>           
                         </tr>
+                      </thead>
                         <?php
                         $no = 1;
                         foreach ($data as $sc) {
@@ -73,7 +65,7 @@
                           <td><?php echo $sc->lama_cuti ?></td>
                           <td><?php echo $sc->mulai_cuti ?></td>
                           <td><?php echo $sc->batas_cuti ?></td>         
-                          <td><?php echo $sc->alasan ?></td>  
+                          <!-- <td><?php echo $sc->alasan ?></td>   -->
                           <td>
                            
                             <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratcuti/').$sc->id; ?>"> Edit</a>
@@ -102,4 +94,4 @@
            
     <!-- admin/template/dashboard_footer -->
               
-            
+       

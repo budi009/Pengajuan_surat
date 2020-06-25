@@ -20,10 +20,10 @@
               
             </div>
 
-            <div class="col-md-12 col-sm-12 ">
+              <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Surat Mengundurkan Diri</h2>
+                    <h2>Surat Cuti</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -39,44 +39,59 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>Nomor Surat</th>
-                          <th>NIM</th>
+                          <th>No Surat</th>
+                          <th>Nim</th>
                           <th>Nama</th>
                           <th>Prodi</th>
-                          <th>Action</th>
+                          <th>Semester</th>
+                          <th>Lama Cuti</th>
+                          <th>Mulai Cuti</th>
+                          <th>Batas Cuti</th>         
+                          <!-- <th>alasan</th>  -->
+                          <th>Action</th>           
                         </tr>
                       </thead>
                         <?php
                         $no = 1;
-                        foreach ($surat_mundur as $sm) {
+                        foreach ($data as $sc) {
                         ?>
                         <tr>
                           <td><?php echo $no++ ?></td>
-                          <td><?php echo $sm->nomor_surat ?></td>
-                          <td><?php echo $sm->nim ?></td>
-                          <td><?php echo $sm->nama ?></td>
-                          <td><?php echo $sm->prodi_id ?></td>
+                          <td><?php echo $sc->nomor_surat ?></td>
+                          <td><?php echo $sc->nim ?></td>
+                          <td><?php echo $sc->nama ?></td>
+                          <td><?php echo $sc->prodi_id ?></td>
+                          <td><?php echo $sc->semester ?></td>
+                          <td><?php echo $sc->lama_cuti ?></td>
+                          <td><?php echo $sc->mulai_cuti ?></td>
+                          <td><?php echo $sc->batas_cuti ?></td>         
+                          <!-- <td><?php echo $sc->alasan ?></td>   -->
                           <td>
-                          <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
-                      <a class="col-md-6 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
-                           <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a>
+                           
+                            <!-- <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratcuti/').$sc->id; ?>"> Edit</a>
+                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/').$sc->id; ?>"> Cetak</a> -->
+                            
                           </td>
-                          </tr>                  
+                        
+                        </tr>                  
                        <?php } ?>
                     </table>
           
-                    <!-- <p style="text-align: center;">
-                      <span style="line-height: 1.3; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 14;">
-                        SURAT PENGUNDURAN DIRI MAHASISWA
-                      </span> <br>
-                      <span style="line-height: 1; font-family: 'Times New Roman', Times, serif; font-size: 14;">
-                        Nomor : <?php echo $sm->nomor_surat ?> /PL36/KM.00.00/2019
-                     </span> 
-                    </p> -->
+          
                   </div>
                 </div>
               </div>
             </div>
-                </div>
-              </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  </div>
+          <!-- /top tiles -->
+
+
+           
+    <!-- admin/template/dashboard_footer -->
               
+       

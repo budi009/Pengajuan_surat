@@ -10,7 +10,7 @@
 
         <!-- page content -->
         <meta charset="UTF-8">
-    <!-- <title>Basic Resposive</title>
+    <title>Basic Resposive</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       .img {
@@ -24,12 +24,12 @@
     margin-left: auto;
     margin-right: auto;
       }
-    </style> -->
+    </style>
     <div class="right_col" role="main">
           <!-- top tiles -->
 
-          <h3 style="text-align: center;">Layanan Persuratan Akademik, Pendaftaran Wisuda & Kuisioner</h3>
-          <!-- <div >
+          <h3 style="text-align: center;">Profile</h3>
+          <div >
           <div class="tile_count">
             <div class="col-md-12  ">
               <img class="img tengah"  src="<?= base_url('assets/img/profil/') . $user['gambar']; ?>">
@@ -39,7 +39,7 @@
             </div>
             
           </div>
-        </div> -->
+        </div>
           <!-- /top tiles -->
       </div>
           

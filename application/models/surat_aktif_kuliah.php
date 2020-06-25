@@ -1,9 +1,18 @@
 <?php
 
+use Zxing\Result;
+
 Class surat_aktif_kuliah extends CI_Model{
 
     function aktif_kuliah(){
             return $this->db->get('surat_aktif_kuliah');
+            
+
+    }
+    function aktif_kuliahh(){
+        $hasil = $this->db->order_by('nim','DESC')->get('surat_aktif_kuliah');
+         return  $hasil->result();
+
     }
 
     function detail_data($id = NULL){

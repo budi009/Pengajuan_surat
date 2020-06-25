@@ -25,7 +25,6 @@
     <link href="<?= base_url('assets'); ?>../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
     <!-- bootstrap-daterangepicker -->
     <link href="<?= base_url('assets'); ?>../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-    <link href="<?= base_url('assets'); ?>../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Theme Style -->
     <link href="<?= base_url('assets'); ?>../build/css/custom.min.css" rel="stylesheet">

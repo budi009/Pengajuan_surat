@@ -53,18 +53,6 @@
     <!-- bootstrap-daterangepicker -->
     <script src="<?= base_url('assets'); ?>../vendors/moment/min/moment.min.js"></script>
     <script src="<?= base_url('assets'); ?>../vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- <script src="<?= base_url('assets'); ?>../vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script> -->
-    <script src="<?= base_url('assets'); ?>../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-    <!-- <script src="<?= base_url('assets'); ?>../vendors/datatables.net/js/dataTables.responsive.min.js"></script> -->
-    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
 
     <!-- Custom Theme Scripts -->
     <script src="<?= base_url('assets'); ?>../build/js/custom.min.js"></script>
-    <script type="text/javascript">
-
-$(document).ready(function(){
-
-      $('#mydata').DataTable();
-
-});
-    </script>

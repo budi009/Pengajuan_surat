@@ -22,4 +22,7 @@ Class m_relasi extends CI_Model{
     function get_dosen(){
         return $this->db->get('dosen');
     }
+    function get_kelas(){
+        return $this->db->get('kelas');
+    }
 }

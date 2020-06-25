@@ -14,7 +14,7 @@ class User extends CI_Controller
 
     public function index()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         
 
         $this->load->view('user/template/dashboard_header');
@@ -24,9 +24,23 @@ class User extends CI_Controller
         $this->load->view('user/template/dashboard_footer');
 
     }
+    public function profile()
+    {
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        
+
+        $this->load->view('user/template/dashboard_header');
+        $this->load->view('user/template/dashboard_side', $data);
+        $this->load->view('user/template/dashboard_top', $data);
+        $this->load->view('user/profile', $data);
+        $this->load->view('user/template/dashboard_footer');
+
+    }
+
+
     public function surat1()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         $data2['prodi']= $this->m_relasi->get_prodi();
         $data2['semester']= $this->m_relasi->get_semester();
         $data2['th_angkatan']= $this->m_relasi->get_th_angkatan();
@@ -82,7 +96,7 @@ class User extends CI_Controller
     }
     public function surat2()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         $data2['data'] = $this->m_relasi->get_relasi();
         $data2['prodi']= $this->m_relasi->get_prodi();
         $data2['semester']= $this->m_relasi->get_semester();
@@ -143,7 +157,7 @@ class User extends CI_Controller
         
         public function surat3()
         {
-            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
             
             $this->form_validation->set_rules('nama1','Anggota1', 'required|trim');
             $this->form_validation->set_rules('nama2','Anggota2', 'trim');
@@ -188,7 +202,7 @@ class User extends CI_Controller
         }
         public function surat4()
         {
-            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
             $data2['prodi']= $this->m_relasi->get_prodi();
             $data2['semester']= $this->m_relasi->get_semester();
 
@@ -223,7 +237,7 @@ class User extends CI_Controller
         }
         public function daftar_wisuda()
         {
-            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
             $data2['prodi']= $this->m_relasi->get_prodi();
             
 
@@ -291,16 +305,120 @@ class User extends CI_Controller
 
         public function kuisioner(){
 
-            $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+            $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+            // $data['user'] = $this->db->get_where('user_sistem', ['nama_user' => $this->session->userdata('id_user')])->row_array();
             $data2['dosen']= $this->m_relasi->get_dosen();
             $data2['prodi']= $this->m_relasi->get_prodi();
+            $data2['kelas']= $this->m_relasi->get_kelas();
+
+
+            $this->form_validation->set_rules('nim','NIM', 'required|trim');
+            $this->form_validation->set_rules('nama','Nama', 'required|trim');
+            $this->form_validation->set_rules('prodi','Prodi', 'required|trim');
+            $this->form_validation->set_rules('kelas','Kelas', 'required|trim');
+            $this->form_validation->set_rules('dosen','Dosen', 'required|trim');
+            $this->form_validation->set_rules('matkul','Matkul', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios1','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios2','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios3','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios4','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios5','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios6','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios7','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios8','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios9','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios10','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios11','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios12','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios13','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios14','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios15','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios16','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios17','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios18','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios19','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios20','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios21','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios22','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios23','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios24','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios25','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios26','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios27','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios28','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios29','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios30','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios31','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios32','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios33','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios34','Pilihan', 'required|trim');
+            $this->form_validation->set_rules('optionsRadios35','Pilihan', 'required|trim');
+
+            if ($this->form_validation->run() == false) {
 
             $this->load->view('user/template/dashboard_header');
             $this->load->view('user/template/dashboard_side', $data);
             $this->load->view('user/template/dashboard_top', $data);
             $this->load->view('user/kuisioner', $data2);
             $this->load->view('user/template/dashboard_footer');
+        }else{
+            $data2 = [
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
+                'nim' => htmlspecialchars($this->input->post('nim', true)),
+                'prodi' => htmlspecialchars($this->input->post('prodi', true)),
+                'kelas' => htmlspecialchars($this->input->post('kelas', true))
+                
+           
+                
+            ];
+            $this->db->insert('pengisi_kuisioner', $data2);
 
+            $data2 = [
+                'nama_dosen' => htmlspecialchars($this->input->post('dosen', true)),
+                'matkul' => htmlspecialchars($this->input->post('matkul', true)),
+                'p' => htmlspecialchars($this->input->post('optionsRadios', true)),
+                'p1' => htmlspecialchars($this->input->post('optionsRadios1', true)),
+                'p2' => htmlspecialchars($this->input->post('optionsRadios2', true)),
+                'p3' => htmlspecialchars($this->input->post('optionsRadios3', true)),
+                'p4' => htmlspecialchars($this->input->post('optionsRadios4', true)),
+                'p5' => htmlspecialchars($this->input->post('optionsRadios5', true)),
+                'p6' => htmlspecialchars($this->input->post('optionsRadios6', true)),
+                'p7' => htmlspecialchars($this->input->post('optionsRadios7', true)),
+                'p8' => htmlspecialchars($this->input->post('optionsRadios8', true)),
+                'p9' => htmlspecialchars($this->input->post('optionsRadios9', true)),
+                'p10' => htmlspecialchars($this->input->post('optionsRadios10', true)),
+                'p11' => htmlspecialchars($this->input->post('optionsRadios11', true)),
+                'p12' => htmlspecialchars($this->input->post('optionsRadios12', true)),
+                'p13' => htmlspecialchars($this->input->post('optionsRadios13', true)),
+                'p14' => htmlspecialchars($this->input->post('optionsRadios14', true)),
+                'p15' => htmlspecialchars($this->input->post('optionsRadios15', true)),
+                'p16' => htmlspecialchars($this->input->post('optionsRadios16', true)),
+                'p17' => htmlspecialchars($this->input->post('optionsRadios17', true)),
+                'p18' => htmlspecialchars($this->input->post('optionsRadios18', true)),
+                'p19' => htmlspecialchars($this->input->post('optionsRadios19', true)),
+                'p20' => htmlspecialchars($this->input->post('optionsRadios20', true)),
+                'p21' => htmlspecialchars($this->input->post('optionsRadios21', true)),
+                'p22' => htmlspecialchars($this->input->post('optionsRadios22', true)),
+                'p23' => htmlspecialchars($this->input->post('optionsRadios23', true)),
+                'p24' => htmlspecialchars($this->input->post('optionsRadios24', true)),
+                'p25' => htmlspecialchars($this->input->post('optionsRadios25', true)),
+                'p26' => htmlspecialchars($this->input->post('optionsRadios26', true)),
+                'p27' => htmlspecialchars($this->input->post('optionsRadios27', true)),
+                'p28' => htmlspecialchars($this->input->post('optionsRadios28', true)),
+                'p29' => htmlspecialchars($this->input->post('optionsRadios29', true)),
+                'p30' => htmlspecialchars($this->input->post('optionsRadios30', true)),
+                'p31' => htmlspecialchars($this->input->post('optionsRadios31', true)),
+                'p32' => htmlspecialchars($this->input->post('optionsRadios32', true)),
+                'p33' => htmlspecialchars($this->input->post('optionsRadios33', true)),
+                'p34' => htmlspecialchars($this->input->post('optionsRadios34', true)),
+                'p35' => htmlspecialchars($this->input->post('optionsRadios35', true))
+                
+
+            ];
+            $this->db->insert('jawaban_kuisioner', $data2);
+            redirect('user/kuisioner');
+        }
         }
     
 }

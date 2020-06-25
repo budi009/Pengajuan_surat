@@ -34,3 +34,45 @@
             </tr>
         </table>
         <hr class="line-title">
+            <br>
+
+           <?php 
+           
+
+           for ( $ck = 1;  $ck<=3; $ck++) {
+               
+           ?>
+           <br>
+           <table border="1" style="width: 100%;"> 
+               <tr>
+                   <td>
+                   <table border="1" style="width: 100%;">
+                <tr>
+                    <td>
+                        <img style="width: 150px; height: 200px;" src="assets/img/profil/default.jpg" alt="">
+                   
+                    </td>
+                    <td >
+                       <a style="line-height: 1;margin-left: 20px; margin-right: 120px;">Nama</a> : <br>
+                       <a style="line-height: 1;margin-left: 20px; margin-right: 127px;">NIM</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Jenis Kelamin</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Tempat/Tanggal Lahir</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Program Studi</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Alamat</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Nomor Telephone/HP</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Lama Studi</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Judul Laporan</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">IPK</a> :<br>
+                       <a style="line-height: 1;margin-left: 20px;">Alamat Sosmed</a> :<br>
+
+
+                    </td>
+                </tr>
+                
+            </table>
+                   </td>
+               </tr>
+          </table>
+           
+           <?php } ?>
+        

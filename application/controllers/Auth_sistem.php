@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Auth extends CI_Controller 
+class Auth_sistem extends CI_Controller 
 {
 
     public function __construct()
@@ -11,33 +11,36 @@ class Auth extends CI_Controller
     }
 	public function index()
 	{
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('id_user', 'User', 'trim|required');
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
        
         if($this->form_validation->run() == false){
             $data['title'] = 'Login';
             // $this->load->view('template/auth_header', $data);
-            $this->load->view('auth/login', $data);
+            $this->load->view('auth_sistem/login', $data);
             // $this->load->view('template/auth_footer');
         } else {
+          
             //validasi berhasil
             $this->login();
         }
     }
     private function login()
     {
-        $email = $this->input->post('email');
+        $id_user = $this->input->post('id_user');
         $password = $this->input->post('password');
         
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+        $user = $this->db->get_where('user_sistem', ['id_user' => $id_user])->row_array();
         
         if($user){
             //usernya ada
-            if($user['is_active'] == 1){
+            if($user['status_user'] == 1){
                 //cek password
                 if(password_verify($password, $user['password'])) {
                     $data =[
-                        'email' => $user['email'],
+                        'id_user' => $user['id_user'],
+                        'nama_user' => $user['nama_user'],
+                        'gambar' => $user['gambar'],
                         'role_id' => $user['role_id']
                     ];
                     $this->session->set_userdata($data);
@@ -45,31 +48,37 @@ class Auth extends CI_Controller
                         redirect('admin');
                     }elseif($user['role_id'] == 2){
                         redirect('adminprodi');
-                    }else{
+                    }elseif($user['role_id'] == 3){
                         redirect('user');  
+                    }else{
+                        redirect('pimpinan');  
                     }
                 }else {
                     $this->session->set_flashdata('massage', '<div class="alert alert-danger" role="alert">Password salah</div>');
-                    redirect('auth');
+                    redirect('auth_sistem');
                 }
 
 
             }else {
                 $this->session->set_flashdata('massage', '<div class="alert alert-danger" role="alert">Email tidak aktif</div>');
-                redirect('auth');
+                redirect('auth_sistem');
             }
         }else {
             $this->session->set_flashdata('massage', '<div class="alert alert-danger" role="alert">Email salah</div>');
-            redirect('auth');
+            redirect('auth_sistem');
         }
     }
 
 
 
     public function registrasi()
-    {
-        $this->form_validation->set_rules('name','Name', 'required|trim');
-        $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user.email]');
+    {   
+        
+        $this->form_validation->set_rules('nama','Nama', 'required|trim');
+        $this->form_validation->set_rules('id_user','User', 'required|trim');
+        $this->form_validation->set_rules('prodi','Prodi', 'required|trim');
+        $this->form_validation->set_rules('kelas','Kelas', 'required|trim');
+        $this->form_validation->set_rules('email','Email', 'required|trim|valid_email|is_unique[user_sistem.email]');
         $this->form_validation->set_rules('password1','Password', 'required|trim|min_length[4]|matches[password2]', [
                 'matches' => 'Password dont match!',
                 'min_length' => 'Password too short!'
@@ -78,29 +87,31 @@ class Auth extends CI_Controller
 
         if ($this->form_validation->run() == false) {
             $data['title'] = 'Registrasi';
-            $this->load->view('template/auth_header', $data);
-            $this->load->view('auth/registrasi');
-            $this->load->view('template/auth_footer');
+            $this->load->view('auth_sistem/registrasi',$data);
         }else {
-            $data = [
-                    'nama' => htmlspecialchars($this->input->post('name', true)),
+            $data2 = [
+                    'nama_user' => htmlspecialchars($this->input->post('nama', true)),
+                    'id_user' => htmlspecialchars($this->input->post('id_user', true)),
+                    'prodi' => htmlspecialchars($this->input->post('prodi', true)),
+                    'kelas' => htmlspecialchars($this->input->post('kelas', true)),
                     'email' => htmlspecialchars($this->input->post('email', true)),
-                    'gambar' => 'default.jpg',
                     'password' => password_hash($this->input->post('password1'), PASSWORD_DEFAULT),
-                    'role_id' => 2,
-                    'is_active' => 1,
+                    'gambar' => 'default.jpg',
+                    'status_user' => 1,
+                    'role_id' => 1,
                     'tanggal_buat' => time()
             ];
-             $this->db->insert('user', $data);
-             redirect('auth'); 
+             $this->db->insert('user_sistem', $data2);
+             redirect('auth_sistem'); 
+             $this->session->set_flashdata('massage', '<div class="alert alert-success" role="alert">Registrasi Berhasil</div>');
         }
     }
     public function logout()
     {
-       $this->session->unset_userdata('email'); 
+       $this->session->unset_userdata('id_user'); 
        $this->session->unset_userdata('role_id'); 
-       $this->session->set_flashdata('massage', '<div class="alert alert-success" role="alert">Logout</div>');
-        redirect('auth');
+    //    $this->session->set_flashdata('massage', '<div class="alert alert-success" role="alert"> Berhasil Logout</div>');
+        redirect('auth_sistem');
     }
 
 }

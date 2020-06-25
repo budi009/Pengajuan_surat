@@ -5,7 +5,7 @@ class AdminProdi extends CI_Controller
 {
     public function index()
     {
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         
 
         $this->load->view('adminprodi/template/dashboard_header');
@@ -16,7 +16,7 @@ class AdminProdi extends CI_Controller
         
     }
     public function surat(){
-        $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         
     
         $this->load->view('adminprodi/template/dashboard_header');

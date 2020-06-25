@@ -23,7 +23,7 @@
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Surat Mengundurkan Diri</h2>
+                    <h2>Pelaksanaan Kerja Praktek</h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -37,42 +37,51 @@
                             <div class="card-box table-responsive">
                     <table id="mydata" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
+
                         <tr>
                           <th>No</th>
                           <th>Nomor Surat</th>
-                          <th>NIM</th>
                           <th>Nama</th>
-                          <th>Prodi</th>
+                          <th>NIM</th>
+                          <!-- <th>Prodi</th> -->
+                          <th>Waktu Kerja Praktek</th>
+                          <th>Lokasi Kerja Praktek</th>
                           <th>Action</th>
                         </tr>
                       </thead>
                         <?php
+                        
                         $no = 1;
-                        foreach ($surat_mundur as $sm) {
+                        foreach ($surat_kp as $kp) {
                         ?>
                         <tr>
-                          <td><?php echo $no++ ?></td>
-                          <td><?php echo $sm->nomor_surat ?></td>
-                          <td><?php echo $sm->nim ?></td>
-                          <td><?php echo $sm->nama ?></td>
-                          <td><?php echo $sm->prodi_id ?></td>
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $kp->nomor_surat ?></td>
                           <td>
-                          <a class="col-md-6 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/').$sm->mundur_id; ?>"> Detail</a>
-                      <a class="col-md-6 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/').$sm->mundur_id; ?>"> Edit</a>
-                           <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/').$sm->mundur_id; ?>"> Cetak</a>
+                            <?php echo $kp->nama ?><br>
+                            <?php echo $kp->nama2 ?><br>
+                            <?php echo $kp->nama3 ?><br>
+                            <?php echo $kp->nama4 ?><br>
+                            <?php echo $kp->nama5 ?>
+                        </td>
+                          <td>
+                            <?php echo $kp->nim ?><br>
+                            <?php echo $kp->nim2 ?><br>
+                            <?php echo $kp->nim3 ?><br>
+                            <?php echo $kp->nim4 ?><br>
+                            <?php echo $kp->nim5 ?>
+                        </td>
+                          <td><?php echo $kp->tempat ?></td>
+                          <td><?php echo $kp->alamat_tempat ?></td>
+                          <td>
+                          <!-- <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratkp/').$kp->id_kp; ?>"> Edit</a>
+                          <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/suratkppdf/').$kp->id_kp; ?>"> Cetak</a> -->
                           </td>
-                          </tr>                  
-                       <?php } ?>
+                        </tr>
+                        <?php } ?>
                     </table>
           
-                    <!-- <p style="text-align: center;">
-                      <span style="line-height: 1.3; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 14;">
-                        SURAT PENGUNDURAN DIRI MAHASISWA
-                      </span> <br>
-                      <span style="line-height: 1; font-family: 'Times New Roman', Times, serif; font-size: 14;">
-                        Nomor : <?php echo $sm->nomor_surat ?> /PL36/KM.00.00/2019
-                     </span> 
-                    </p> -->
+          
                   </div>
                 </div>
               </div>

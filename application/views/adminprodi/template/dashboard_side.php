@@ -13,7 +13,7 @@
               </div>
               <div class="profile_info">
                 <span>Welcome</span>
-                <h2><?= $user['nama'];?></h2>
+                <h2><?= $user['nama_user'];?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -26,7 +26,7 @@
                 <ul class="nav side-menu">
                   <li><a href="<?= base_url('adminprodi/index'); ?>" ><i class="fa fa-home"></i> Home </a></li>
                   <li><a href="<?= base_url('adminprodi/surat'); ?>"><i class="fa fa-envelope"></i> Surat Pengajuan </a></li>
-                  <li><a href="<?= base_url('auth/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>
+                  <li><a href="<?= base_url('auth_sistem/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>
                 </ul>
               </div>
             </div>
