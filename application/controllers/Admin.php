@@ -22,6 +22,11 @@ class Admin extends CI_Controller
     public function index()
     {
         $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $data['jml_aktif'] = $this->surat_aktif_kuliah->jml_surat_aktif(); 
+        $data['jml_cuti'] = $this->surat_cuti->jml(); 
+        $data['jml_kp'] = $this->surat_kp->jml(); 
+        $data['jml_mundur'] = $this->surat_mundur->jml(); 
+        $data['jml_wisuda'] = $this->daftar_wisuda->jml(); 
         
         $this->load->view('admin/template/dashboard_header');
         $this->load->view('admin/template/dashboard_side', $data);

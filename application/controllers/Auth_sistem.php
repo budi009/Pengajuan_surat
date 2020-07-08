@@ -49,9 +49,9 @@ class Auth_sistem extends CI_Controller
                     }elseif($user['role_id'] == 2){
                         redirect('adminprodi');
                     }elseif($user['role_id'] == 3){
-                        redirect('user');  
-                    }else{
                         redirect('pimpinan');  
+                    }else{
+                        redirect('user');  
                     }
                 }else {
                     $this->session->set_flashdata('massage', '<div class="alert alert-danger" role="alert">Password salah</div>');

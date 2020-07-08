@@ -86,6 +86,7 @@ class User extends CI_Controller
                 'fc_ktm_mhs' =>  'ktm.jpg',
                 'fc_buku_pedoman' =>  'pedoman.jpg',
                 'lainnya' => htmlspecialchars($this->input->post('lainnya', true))
+                
             ];
             $this->db->insert('surat_aktif_kuliah', $data3);
             redirect('user/surat1');
@@ -310,6 +311,7 @@ class User extends CI_Controller
             $data2['dosen']= $this->m_relasi->get_dosen();
             $data2['prodi']= $this->m_relasi->get_prodi();
             $data2['kelas']= $this->m_relasi->get_kelas();
+            $data2['dosenmatkul']= $this->m_relasi->get_relasi_dosenmatkul();
 
 
             $this->form_validation->set_rules('nim','NIM', 'required|trim');

@@ -89,7 +89,7 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Tahun Akademik <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <select id="th_akademik" name="th_akademik" class="form-control">
+                          <select id="th_akademik" name="th_akademik" class="form-control" required="required">
                             <option>2017</option>
                             <option>2018</option>
                             <option>2019</option>
@@ -103,7 +103,7 @@
                       <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Nama Orang Tua<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="nama_ortu" class="form-control" type="text" name="nama_ortu">
+                          <input id="nama_ortu" class="form-control" type="text" name="nama_ortu" required="required">
                         </div>
                       </div>
                     
@@ -111,7 +111,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="pekerjaan_ortu" name="pekerjaan_ortu" class="date-picker form-control" type="text">
+                          <input id="pekerjaan_ortu" name="pekerjaan_ortu" class="date-picker form-control" type="text" required="required">
                         </div>
                       </div>
                       <div class="item form-group">
@@ -139,7 +139,7 @@
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Alamat Lengkap<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="alamat_ortu" name="alamat_ortu" class="date-picker form-control" type="text">
+                          <input id="alamat_ortu" name="alamat_ortu" class="date-picker form-control" type="text" required="required">
                         </div>
                       </div>
 

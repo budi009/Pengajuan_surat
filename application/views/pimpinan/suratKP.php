@@ -40,13 +40,12 @@
 
                         <tr>
                           <th>No</th>
-                          <th>Nomor Surat</th>
                           <th>Nama</th>
                           <th>NIM</th>
-                          <!-- <th>Prodi</th> -->
                           <th>Waktu Kerja Praktek</th>
                           <th>Lokasi Kerja Praktek</th>
                           <th>Action</th>
+                          <th>QRcode</th>
                         </tr>
                       </thead>
                         <?php
@@ -56,7 +55,7 @@
                         ?>
                         <tr>
                             <td><?php echo $no++ ?></td>
-                            <td><?php echo $kp->nomor_surat ?></td>
+                            
                           <td>
                             <?php echo $kp->nama ?><br>
                             <?php echo $kp->nama2 ?><br>
@@ -74,9 +73,9 @@
                           <td><?php echo $kp->tempat ?></td>
                           <td><?php echo $kp->alamat_tempat ?></td>
                           <td>
-                          <!-- <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratkp/').$kp->id_kp; ?>"> Edit</a>
-                          <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/suratkppdf/').$kp->id_kp; ?>"> Cetak</a> -->
+                          <a class="col-md-12 btn btn-primary fa fa-check-square-o " href="<?= base_url('pimpinan/editsuratkp/').$kp->id_kp; ?>"> Validasi </a>
                           </td>
+                          <td > <img style="width: 100px" src="<?= base_url('assets/qrcode/'.$kp->qrcode); ?>" alt=""> </td>    
                         </tr>
                         <?php } ?>
                     </table>

@@ -7,7 +7,11 @@
           <!-- top navigation -->
                    <!-- adminprodi/template/dasboard_top -->
           <!-- /top navigation -->
-
+<style>#qrcode {
+  width:160px;
+  height:160px;
+  margin-top:15px;
+}</style>
         <!-- page content -->
         <div class="right_col" role="main">
           <!-- top tiles -->
@@ -46,7 +50,34 @@
           </div>
         </div>
           <!-- /top tiles -->
-      </div>
+          <input id="text" value="<?= $user = $this->session->userdata('nama_user'); ?>" type="text" /><br />
+          <button>coba</button>
+          <div id="qrcode"></div>
+            <!-- /top tiles -->
 
+
+            <a href="<?= base_url('pimpinan/QRcode'); ?>"> lllll</a>
+
+      </div> 
+      <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.min.js"></script>
+    <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.js"></script>     
 <!-- adminprodi/template/dashboard_footer -->
+<script type="text/javascript">
+let input = document.querySelector('input');
+let button = document.querySelector('button');
+let qrcode = new QRCode(document.querySelector('#qrcode'), {
+    
+    width: 128,
+    height: 128,
+    colorDark : "#000000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.H
+});
+button.addEventListener('click', () => {
+  let inputValue = input.value;
+  qrcode.makeCode(inputValue);
+})
+
+</script>
+
           

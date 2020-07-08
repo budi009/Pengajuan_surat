@@ -10,8 +10,9 @@ Class surat_aktif_kuliah extends CI_Model{
 
     }
     function aktif_kuliahh(){
+        
         $hasil = $this->db->order_by('nim','DESC')->get('surat_aktif_kuliah');
-         return  $hasil->result();
+        return  $hasil->result();
 
     }
 
@@ -26,6 +27,12 @@ Class surat_aktif_kuliah extends CI_Model{
         $this->db->where($where);
         $this->db->update($table,$data);
     }
+    function jml_surat_aktif(){
+        $jml = "SELECT count(nim) as nim FROM surat_aktif_kuliah";
+        $hasil = $this->db->query($jml);
+        return $hasil->row()->nim;
+    }
+    
 
 
 }

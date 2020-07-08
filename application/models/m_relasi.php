@@ -25,4 +25,13 @@ Class m_relasi extends CI_Model{
     function get_kelas(){
         return $this->db->get('kelas');
     }
+
+    function get_relasi_dosenmatkul(){
+        $this->db->select('*');
+        $this->db->from('mata_kuliah');
+        $this->db->join('dosen','dosen.id_dosen = mata_kuliah.id_dosen');
+        $result = $this->db->get();
+        return $result->result();
+
+    } 
 }

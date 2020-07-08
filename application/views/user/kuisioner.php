@@ -53,7 +53,7 @@
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <input type="text" id="prodi"value="<?= $user['prodi']; ?>"  name="prodi" required="required" class="form-control ">
+                        <input type="text" id="prodi" value="<?= $user['prodi']; ?>"  name="prodi" required="required" class="form-control ">
                         <!-- <select name="prodi" id="prodi" class="form-control">
                             <?php  
                               foreach($prodi->result() as $pr){
@@ -86,21 +86,33 @@
                       <div class="item form-group">
                         <label for="middle-name" class="col-form-label col-md-3 col-sm-3 label-align">Dosen<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <select name="dosen" id="dosen" class="form-control">
+                        <!-- <input type="text" id="dosen" value="<?= $dosenmatkul->nama_dosen ?>"  name="dosen" class="form-control "> -->
+                        <!-- <select name="dosen" id="dosen" class="form-control">
                             <?php  
-                              foreach($dosen->result() as $ds){
-                                  echo "<option value".$ds->nik_dosen.">".$ds->nama_dosen."</options>";
+                              foreach($dosenmatkul as $dsm){
+                                  echo "<option value".$dsm->id_mata_kuliah.">".$dsm->nama_dosen."</options>";
                               }
                             ?>
-                          </select>
-                        </div>
+                          </select> -->
+                          <?php  
+                              foreach($dosenmatkul as $dsm){
+                          echo "<input value=".$dsm->nama_dosen.">";
+                        }
+                        ?>
+                          </div>
                       </div>
                     
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align">Mata Kuliah yang diampu<span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input id="matkul" name="matkul" class="date-picker form-control" type="text">
+                        <select name="matkul" id="matkul" class="form-control">
+                            <?php  
+                              foreach($dosenmatkul as $dsm){
+                                  echo "<option value".$dsm->id_mata_kuliah.">".$dsm->mata_kuliah.' '.$dsm->nama_dosen."</options>";
+                              }
+                            ?>
+                          </select>
                         </div>
                       </div>
                       

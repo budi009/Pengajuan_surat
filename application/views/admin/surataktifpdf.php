@@ -144,11 +144,8 @@
         </p>
 
         <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
-        <!-- <?php 
-      $qrCode = new Endroid\QrCode\QrCode($user['nama_user']);
-      $qrCode->writeFile('assets/qrcode'.'/qrcode.jpg');
-      ?> -->
-      <img style="width: 100px" src="assets/qrcode/qrcode.jpg" alt="">
+        
+      <img style="width: 100px" src="assets/qrcode/Dedy Hidayat Kusuma, S.T., M.Cs.jpg" alt="">
         
         </p>
 

@@ -57,7 +57,13 @@
     <script src="<?= base_url('assets'); ?>../vendors/datatables.net/js/jquery.dataTables.min.js"></script>
     <!-- <script src="<?= base_url('assets'); ?>../vendors/datatables.net/js/dataTables.responsive.min.js"></script> -->
     <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
-
+  <!-- FastClick -->
+  <script src="<?= base_url('assets'); ?>../vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="<?= base_url('assets'); ?>../vendors/nprogress/nprogress.js"></script>
+    <!-- ECharts -->
+    <script src="<?= base_url('assets'); ?>../vendors/echarts/dist/echarts.min.js"></script>
+    <script src="<?= base_url('assets'); ?>../vendors/echarts/map/js/world.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="<?= base_url('assets'); ?>../build/js/custom.min.js"></script>
     <script type="text/javascript">
@@ -67,4 +73,4 @@ $(document).ready(function(){
       $('#mydata').DataTable();
 
 });
-    </script>
+    </script>   

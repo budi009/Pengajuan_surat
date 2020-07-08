@@ -18,17 +18,17 @@
 
                 </div>
                 <section>
-    <?php foreach($surat_aktif_kuliah as $ak) { ?>
-    <form action="<?= base_url('admin/updatesurataktif'); ?>" method="post">
+              <?php foreach($surat_aktif_kuliah as $ak) { ?>
+              <form action="<?= base_url('admin/updatesurataktif'); ?>" method="post">
     
-<div class="form-group row">
+              <div class="form-group row">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nomor Surat
             </label>
             <div class="col-md-6 col-sm-6 ">
               <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $ak->nomor_surat ?>">
             </div>
           </div>
-<div class="form-group row">
+          <div class="form-group row">
         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM
         </label>
         <div class="col-md-6 col-sm-6 ">

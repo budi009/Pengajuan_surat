@@ -9,7 +9,7 @@
           <!-- /top navigation -->
 
         <!-- page content -->
-        
+            
         <div class="right_col" role="main">
           <div class="">
             <div class="page-title">
@@ -23,7 +23,7 @@
                 <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Plus Table Design</small></h2>
+                    <h2>Surat Aktif Kuliah</small></h2>
                    
                     <div class="clearfix"></div>
                   </div>
@@ -78,7 +78,7 @@
                         </td>    
                         </tr>                                  
                        <?php } ?>
-                      
+                       
                     </table>
                   </div>
                 </div>
@@ -89,5 +89,5 @@
      </div>
   </div>
 </div>
-           
+       
             

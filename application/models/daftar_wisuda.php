@@ -21,5 +21,9 @@ Class daftar_wisuda extends CI_Model{
     //     $this->db->where($where);
     //     $this->db->update($table,$data);
     // }
-
+    function jml(){
+        $jml = "SELECT count(nim) as nim FROM daftar_wisuda";
+        $hasil = $this->db->query($jml);
+        return $hasil->row()->nim;
+      }
 }

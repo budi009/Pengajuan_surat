@@ -13,6 +13,7 @@ class Pimpinan extends CI_Controller
         $this->load->model('surat_aktif_kuliah');
         $this->load->model('surat_mundur');
         $this->load->model('daftar_wisuda');
+        $this->load->model('m_qr');
         $this->load->model('m_relasi');
         
         
@@ -31,13 +32,17 @@ class Pimpinan extends CI_Controller
     }
     public function surat_aktif_kuliah(){
         $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
-        // $data2['surat_cuti'] = $this->db->get('surat_cuti')->row_array();
-        $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliahh(); 
-        // $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliah()->result(); 
+        // $user = $this->session->userdata('nama_user');
+        $data2['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliahh(); 
+        // $where = array('id' =>$id);
+        // $data2['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliahh($where)->result(); 
+        // $data3 = new Endroid\QrCode\QrCode('nama');
+        
+
         $this->load->view('pimpinan/template/dashboard_header');
         $this->load->view('pimpinan/template/dashboard_side', $data);
         $this->load->view('pimpinan/template/dashboard_top', $data);
-        $this->load->view('pimpinan/surat', $data3);
+        $this->load->view('pimpinan/surat', $data2);
         $this->load->view('pimpinan/template/dashboard_footer'); 
     }
     public function suratcuti(){
@@ -75,5 +80,135 @@ class Pimpinan extends CI_Controller
         $this->load->view('pimpinan/suratmundur', $data2);
         $this->load->view('pimpinan/template/dashboard_footer');
     }
+    public function QRcode(){
+        // $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $user = $this->session->userdata('nama_user');
+        // $where = array('id' =>$id);
+        // $data2['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->edit_data($where,'surat_aktif_kuliah')->result();
+        $qrCode = new Endroid\QrCode\QrCode($user);
+        $qrCode->writeFile( 'assets/qrcode/'.$user.'jpg');
+        $fotoqr = $user.'.jpg';
+        $datasss = array(
+            'qrcode' => $fotoqr 
+        );
+        $this->m_qr->add_qr($datasss);
+        
+        // redirect('pimpinan/surat_aktif_kuliah');
+    }
+    public function editsurataktif($id){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $where = array('id' =>$id);
+        $data2['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->edit_data($where,'surat_aktif_kuliah')->result(); 
+        // $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliah()->result(); 
+        $this->load->view('admin/template/dashboard_header');
+        $this->load->view('admin/template/dashboard_side', $data);
+        $this->load->view('admin/template/dashboard_top', $data);
+        $this->load->view('pimpinan/editsurataktif', $data2);
+        $this->load->view('admin/template/dashboard_footer'); 
+    }
+    public function detailsurataktif($id){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $detail = $this->surat_aktif_kuliah->detail_data($id);
+        $data['detail'] = $detail;
+        
+      
+    }
+    public function updatesurataktif(){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $user = $this->session->userdata('nama_user');
 
+        $id = $this->input->post('id');   
+        $fotoqrr = $user.'jpg';           
+           
+        $data = array(
+            'qrcode' => $fotoqrr 
+        );
+        $where = array(
+            'id' => $id
+        );
+        $this->surat_aktif_kuliah->update_data($where,$data,'surat_aktif_kuliah');
+        
+        redirect('pimpinan/surat_aktif_kuliah');
+    }
+    public function editsuratcuti($id){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $where = array('id' =>$id);
+        $data2['surat_cuti'] = $this->surat_cuti->edit_data($where,'surat_cuti')->result(); 
+        // $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliah()->result(); 
+        $this->load->view('pimpinan/template/dashboard_header');
+        $this->load->view('pimpinan/template/dashboard_side', $data);
+        $this->load->view('pimpinan/template/dashboard_top', $data);
+        $this->load->view('pimpinan/editsuratcuti', $data2);
+        $this->load->view('pimpinan/template/dashboard_footer'); 
+    }
+    public function updatesuratcuti(){
+
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $user = $this->session->userdata('nama_user');
+        $id = $this->input->post('id');   
+        $fotoqrr = $user.'jpg'; 
+
+
+        $data = array(
+            'qrcode'       => $fotoqrr 
+        );
+        $where = array(
+            'id' => $id
+        );
+        $this->surat_cuti->update_data($where,$data,'surat_cuti');
+        redirect('pimpinan/suratcuti');
+    }
+    public function editsuratkp($id_kp){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $where = array('id_kp' =>$id_kp);
+        $data2['surat_kp'] = $this->surat_kp->edit_data($where,'surat_kerja_praktek')->result(); 
+        // $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliah()->result(); 
+        $this->load->view('pimpinan/template/dashboard_header');
+        $this->load->view('pimpinan/template/dashboard_side', $data);
+        $this->load->view('pimpinan/template/dashboard_top', $data);
+        $this->load->view('pimpinan/editsuratkp', $data2);
+        $this->load->view('pimpinan/template/dashboard_footer'); 
+    }
+    public function updatesuratkp(){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $user = $this->session->userdata('nama_user');
+        $id_kp = $this->input->post('id');   
+        $fotoqrr = $user.'jpg';   
+        
+        $data = array(
+            
+            'qrcode'        => $fotoqrr
+        );
+        $where = array(
+            'id_kp' => $id_kp
+        );
+        $this->surat_kp->update_data($where,$data,'surat_kerja_praktek');
+        redirect('pimpinan/suratKP');
+    }
+    public function editsuratmundur($id){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $where = array('mundur_id' =>$id);
+        $data2['surat_mundur'] = $this->surat_mundur->edit_data($where,'surat_mundur')->result(); 
+        // $data3['surat_aktif_kuliah'] = $this->surat_aktif_kuliah->aktif_kuliah()->result(); 
+        $this->load->view('pimpinan/template/dashboard_header');
+        $this->load->view('pimpinan/template/dashboard_side', $data);
+        $this->load->view('pimpinan/template/dashboard_top', $data);
+        $this->load->view('pimpinan/editsuratmundur', $data2);
+        $this->load->view('pimpinan/template/dashboard_footer'); 
+    }
+    public function updatesuratmundur(){
+        $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
+        $user = $this->session->userdata('nama_user');
+        $id = $this->input->post('id');   
+        $fotoqrr = $user.'jpg';  
+        
+        $data = array(
+            'qrcode'        => $fotoqrr
+        );
+        $where = array(
+            'mundur_id' => $id
+        );
+        $this->surat_mundur->update_data($where,$data,'surat_mundur');
+        redirect('pimpinan/suratmundur');
+    }
 }

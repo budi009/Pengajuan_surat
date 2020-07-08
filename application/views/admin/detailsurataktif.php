@@ -35,7 +35,7 @@
                       <div class="row">
                           <div class="col-sm-8">
                             <div class="card-box table-responsive">
-                    <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                    <table  class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                       <thead>
                         <tr>
                           <th>Nama</th>

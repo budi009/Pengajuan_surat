@@ -39,7 +39,7 @@
                       <thead>
                         <tr>
                           <th>No</th>
-                          <th>No Surat</th>
+                          <!-- <th>No Surat</th> -->
                           <th>Nim</th>
                           <th>Nama</th>
                           <th>Prodi</th>
@@ -49,6 +49,7 @@
                           <th>Batas Cuti</th>         
                           <!-- <th>alasan</th>  -->
                           <th>Action</th>           
+                          <th>QRcode</th>           
                         </tr>
                       </thead>
                         <?php
@@ -57,7 +58,7 @@
                         ?>
                         <tr>
                           <td><?php echo $no++ ?></td>
-                          <td><?php echo $sc->nomor_surat ?></td>
+                          <!-- <td><?php echo $sc->nomor_surat ?></td> -->
                           <td><?php echo $sc->nim ?></td>
                           <td><?php echo $sc->nama ?></td>
                           <td><?php echo $sc->prodi_id ?></td>
@@ -68,11 +69,11 @@
                           <!-- <td><?php echo $sc->alasan ?></td>   -->
                           <td>
                            
-                            <!-- <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratcuti/').$sc->id; ?>"> Edit</a>
-                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/').$sc->id; ?>"> Cetak</a> -->
-                            
+                          <a class="col-md-12 btn btn-primary fa fa-check-square-o " href="<?= base_url('pimpinan/editsuratcuti/').$sc->id; ?>"> Validasi </a>
+
                           </td>
-                        
+                          <td > <img style="width: 100px" src="<?= base_url('assets/qrcode/'.$sc->qrcode); ?>" alt=""> </td>    
+
                         </tr>                  
                        <?php } ?>
                     </table>

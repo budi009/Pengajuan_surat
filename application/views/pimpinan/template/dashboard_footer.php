@@ -56,3 +56,7 @@
 
     <!-- Custom Theme Scripts -->
     <script src="<?= base_url('assets'); ?>../build/js/custom.min.js"></script>
+    <!-- <script src="<?= base_url('assets'); ?>../vendors/js/jquery.min.js"></script> -->
+    <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.min.js"></script>
+    <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.js"></script>
+    
