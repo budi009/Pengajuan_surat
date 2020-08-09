@@ -9,6 +9,7 @@ class User extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
         $this->load->model('m_relasi');
+        $this->load->model('kuisioner');
     }
 
     public function index()
@@ -491,6 +492,7 @@ class User extends CI_Controller
         $data2['prodi'] = $this->m_relasi->get_prodi();
         $data2['kelas'] = $this->m_relasi->get_kelas();
         $data2['dosenmatkul'] = $this->m_relasi->ambil_matkul();
+        $data2['dosenmat'] = $this->kuisioner->get_relasi();
        
         $this->form_validation->set_rules('nim', 'NIM', 'required|trim');
         // $this->form_validation->set_rules('nama', 'Nama', 'required|trim');
@@ -540,7 +542,7 @@ class User extends CI_Controller
             $this->load->view('user/template/dashboard_header');
             $this->load->view('user/template/dashboard_side', $data);
             $this->load->view('user/template/dashboard_top', $data);
-            $this->load->view('user/kuisioner', $data2);
+            $this->load->view('user/kuisioner', $data2, $data);
             $this->load->view('user/template/dashboard_footer');
         } else {
            
@@ -597,5 +599,14 @@ class User extends CI_Controller
         if ($this->input->post('id_mata_kuliah')) {
             echo $this->m_relasi->ambil_dosen($this->input->post('id_mata_kuliah'));
         }
+    }
+    public function update_kuisioner()
+    {
+        $data = array(
+
+            'status_mengisi'        => 1
+        );
+        $this->kuisioner->update_dataku($data, 'jawaban_kuisioner');
+        redirect('user/kuisioner');
     }
 }

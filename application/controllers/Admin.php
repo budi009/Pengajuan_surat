@@ -414,4 +414,5 @@ class Admin extends CI_Controller
         $data['data'] = $this->db->get('daftar_wisuda');
         $this->mypdfwisuda->generate('admin/wisudapdf', $data);
     }
+    
 }
