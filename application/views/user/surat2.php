@@ -35,46 +35,34 @@
                     <br />
                     <form action="<?= base_url('user/surat2'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
-                      <div class="item form-group">
+                    <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama Lengkap <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nama" name="nama" required="required" class="form-control" value="<?= set_value('nama'); ?>">
+                          <input type="hidden" id="nama" name="nama"  value="<?= $user['nama_user']; ?>" required="required" class="form-control ">
+                          <input type="text" disabled id="nama" name="nama"  value="<?= $user['nama_user']; ?>" required="required" class="form-control ">
                         </div>
                       </div>
                       <div class="item form-group">
                         <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIM <span class="required">*</span>
                         </label>
                         <div class="col-md-6 col-sm-6 ">
-                          <input type="text" id="nim" name="nim" required="required" class="form-control" value="<?= set_value('nim'); ?>">
+                          <input type="hidden" id="nim" name="nim" value="<?= $user['id_user']; ?>" required="required" class="form-control">
+                          <input type="text" disabled id="nim" name="nim" value="<?= $user['id_user']; ?>" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
-                        <!-- <input type="text" id="prodi" name="prodi" class="form-control "> -->
-                          <select name="prodi" id="prodi" class="form-control">
-                            <?php  
-                              foreach($prodi->result() as $pr){
-                                  echo "<option value".$pr->prodi_id.">".$pr->nama_prodi."</options>";
-                              }
-                            ?>
-                          <!-- <option >Prodi</option>
-                            <option value="TI">Teknik Informatika</option>
-                            <option value="TM">Teknik Mesin</option>
-                            <option value="TS">Teknik Sipil</option>
-                            <option value="AGB">Agribisnis</option>
-                            <option value="TMK">Teknik Manufaktur Kapal</option>
-                            <option value="MBP">Manajemen Bisnis Pariwisata</option>
-                            <option value="TPHT">Teknologi Pengolahan Hasil Ternak</option> -->
-                          </select>
+                        <input type="hidden" id="prodi" name="prodi" value="<?= $user['prodi']; ?>" required="required" class="form-control">
+                        <input type="text" disabled id="prodi" name="prodi" value="<?= $user['prodi']; ?>" required="required" class="form-control">
                         </div>
                       </div>
                       <div class="form-group row">
                         <label class="control-label col-md-3 col-sm-3 label-align">Semester <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 ">
                         <select name="semester" id="semester" class="form-control">
-                            
+                        <option  value="">Pilih Semester (Saat ini) </option>
                             <?php  
                               foreach($semester->result() as $sm){
                                   echo "<option value".$sm->id_semester.">".$sm->semester."</options>";

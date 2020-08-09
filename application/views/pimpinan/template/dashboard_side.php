@@ -12,8 +12,8 @@
                 <img src="<?= base_url('assets/img/profil/') . $user['gambar']; ?>" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome</span>
-                <h2><?= $user['nama_user'];?></h2>
+                <span>Selamat Datang</span>
+                <h2 ><?= $user['nama_user'];?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->

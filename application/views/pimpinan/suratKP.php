@@ -24,13 +24,11 @@
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Pelaksanaan Kerja Praktek</h2>
-                    <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                    </ul>
+                    
                     <div class="clearfix"></div>
                   </div>
+                  <a class="col-md-2 offset-md-10 btn btn-primary fa fa-check-square-o " href="<?= base_url('pimpinan/validasi_kp')?>"> Validasi Semua </a>
+
                   <div class="x_content">
                       <div class="row">
                           <div class="col-sm-12">
@@ -58,22 +56,22 @@
                             
                           <td>
                             <?php echo $kp->nama ?><br>
-                            <?php echo $kp->nama2 ?><br>
+                            <!-- <?php echo $kp->nama2 ?><br>
                             <?php echo $kp->nama3 ?><br>
                             <?php echo $kp->nama4 ?><br>
-                            <?php echo $kp->nama5 ?>
+                            <?php echo $kp->nama5 ?> -->
                         </td>
                           <td>
                             <?php echo $kp->nim ?><br>
-                            <?php echo $kp->nim2 ?><br>
+                            <!-- <?php echo $kp->nim2 ?><br>
                             <?php echo $kp->nim3 ?><br>
                             <?php echo $kp->nim4 ?><br>
-                            <?php echo $kp->nim5 ?>
+                            <?php echo $kp->nim5 ?> -->
                         </td>
                           <td><?php echo $kp->tempat ?></td>
                           <td><?php echo $kp->alamat_tempat ?></td>
                           <td>
-                          <a class="col-md-12 btn btn-primary fa fa-check-square-o " href="<?= base_url('pimpinan/editsuratkp/').$kp->id_kp; ?>"> Validasi </a>
+                          <a class="col-md-12 btn btn-primary fa fa-check-square-o " href="<?= base_url('pimpinan/editsuratkp/').$kp->kp_id; ?>"> Validasi </a>
                           </td>
                           <td > <img style="width: 100px" src="<?= base_url('assets/qrcode/'.$kp->qrcode); ?>" alt=""> </td>    
                         </tr>

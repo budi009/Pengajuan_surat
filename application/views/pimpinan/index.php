@@ -50,19 +50,19 @@
           </div>
         </div>
           <!-- /top tiles -->
-          <input id="text" value="<?= $user = $this->session->userdata('nama_user'); ?>" type="text" /><br />
+          <!-- <input id="text" value="<?= $user = $this->session->userdata('nama_user'); ?>" type="text" /><br />
           <button>coba</button>
-          <div id="qrcode"></div>
+          <div id="qrcode"></div> -->
             <!-- /top tiles -->
 
-
-            <a href="<?= base_url('pimpinan/QRcode'); ?>"> lllll</a>
+<br>
+            <a href="<?= base_url('pimpinan/QRcode'); ?>">Buat Qrcode </a>
 
       </div> 
-      <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.min.js"></script>
-    <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.js"></script>     
+      <!-- <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.min.js"></script>
+    <script src="<?= base_url('assets'); ?>../vendors/js/qrcode.js"></script>      -->
 <!-- adminprodi/template/dashboard_footer -->
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 let input = document.querySelector('input');
 let button = document.querySelector('button');
 let qrcode = new QRCode(document.querySelector('#qrcode'), {
@@ -78,6 +78,6 @@ button.addEventListener('click', () => {
   qrcode.makeCode(inputValue);
 })
 
-</script>
+</script> -->
 
           

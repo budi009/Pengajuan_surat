@@ -8,6 +8,7 @@ class Auth_sistem extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        $this->load->model('m_relasi');
     }
 	public function index()
 	{
@@ -86,7 +87,9 @@ class Auth_sistem extends CI_Controller
         $this->form_validation->set_rules('password2','Password', 'required|trim|matches[password1]');
 
         if ($this->form_validation->run() == false) {
+            
             $data['title'] = 'Registrasi';
+            $data['prodi']= $this->m_relasi->get_prodi();
             $this->load->view('auth_sistem/registrasi',$data);
         }else {
             $data2 = [
