@@ -25,12 +25,12 @@
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nomor Surat
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                  <input type="hidden" id="id_kp" name="id_kp" class="form-control" value="<?php echo $kp->id_kp ?>">
+                                  <input type="hidden" disabled id="id_kp" name="id_kp" class="form-control" value="<?php echo $kp->id_kp ?>">
                                   <?php if ($kp->nomor_surat == 0) { ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="">
-                                  <?php } else{ ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $kp->nomor_surat ?>">
-                                  <?php }?>                                 </div>
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="">
+                                  <?php } else { ?>
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="<?php echo $kp->nomor_surat ?>">
+                                  <?php } ?> </div>
                               </div>
                               <div class="form-group row">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Tempat
@@ -45,6 +45,22 @@
                                 <div class="col-md-6 col-sm-6 ">
                                   <input type="text" disabled id="nama" name="nama" class="form-control" value="<?php echo $kp->alamat_tempat ?>">
                                 </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Status Pengajuan
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <input type="text" id="status_pe" name="status_pe" class="form-control" value="<?php echo $kp->status_pengajuan ?>">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Status Cetak
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <select id="cetak" name="cetak" class="form-control" required="required">
+                                    <option>Tanpa Qrcode</option>
+                                    <option>Menggunakan Qrcode</option>
+                                  </select> </div>
                               </div>
                               <div class="ln_solid"></div>
                               <div class="item form-group">

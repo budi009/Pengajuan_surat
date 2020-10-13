@@ -13,7 +13,8 @@ class surat_aktif_kuliah extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('surat_aktif_kuliah');
-        $this->db->join('user_sistem', 'user_sistem.id_user = surat_aktif_kuliah.nim', 'left');
+        $this->db->join('user_sistem', 'user_sistem.id_user = surat_aktif_kuliah.nim');
+        $this->db->join('prodi', 'prodi.prodi_id = user_sistem.prodi');
         $result = $this->db->get();
         return  $result->result();
     }
@@ -46,6 +47,7 @@ class surat_aktif_kuliah extends CI_Model
         $this->db->select('*');
         $this->db->from('surat_aktif_kuliah');
         $this->db->join('user_sistem', 'user_sistem.id_user = surat_aktif_kuliah.nim');
+        $this->db->join('prodi', 'prodi.prodi_id = user_sistem.prodi');
         $this->db->where($where, $table);
         $hasil = $this->db->get();
         return $hasil;
@@ -70,4 +72,24 @@ class surat_aktif_kuliah extends CI_Model
     {
         $this->db->update($table, $data);
     }
+    function status_pengajuan()
+    {
+        
+        $this->db->join('user_sistem', 'user_sistem.id_user = surat_aktif_kuliah.nim');
+        $result = $this->db->get_where('surat_aktif_kuliah',['nim' => $this->session->userdata('id_user')]);
+        return  $result->result();
+    }
+    function get_prodi($id_user)
+    {
+        $this->db->select('*');
+        $this->db->from('user_sistem');
+        $this->db->join('prodi', 'prodi.prodi_id = user_sistem.prodi');
+        $this->db->where('user_sistem.id_user', $id_user);
+        $result = $this->db->get();
+        return $result->result();
+    }
+    function hapus_data($where,$table){
+        $this->db->where($where);
+        $this->db->delete($table);
+      }
 }

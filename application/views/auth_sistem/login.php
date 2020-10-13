@@ -31,10 +31,10 @@
           <form method="post" action="<?= base_url('auth_sistem'); ?>">
             <h1>Login</h1>
             <div>
-              <input type="text" id="id_user" class="form-control" placeholder="Username" name="id_user" />
+              <input type="text" required id="id_user" class="form-control" placeholder="Username" name="id_user" />
             </div>
             <div>
-              <input type="password" id="password" class="form-control" placeholder="Password" name="password" />
+              <input type="password" required id="password" class="form-control" placeholder="Password" name="password" />
             </div>
             <div>
               <button class="btn btn-primary submit" type="submit" style="font-size: 16px">Log in</button>

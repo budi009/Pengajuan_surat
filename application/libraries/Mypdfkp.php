@@ -12,7 +12,7 @@ class Mypdfkp {
 		$this->ci =& get_instance()
 ;		
     }
-    public function generate($view, $data = array(), $filename = 'SuratKerjaPraktek', $paper = 'A4', $orientation = 'portrait' ){
+    public function generate($view, $data = array(), $filename = 'SuratKerjaPraktek', $paper = 'F4', $orientation = 'potrait' ){
         
         
         $html = $this->ci->load->view($view,$data, TRUE);

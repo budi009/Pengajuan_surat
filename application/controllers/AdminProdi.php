@@ -21,7 +21,8 @@ class AdminProdi extends CI_Controller
     {
         $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
 
-
+        // $data['jml_kp_baca'] = $this->notif->jml_surat_kp_baca();
+        $data['jml_kp_baca2'] = $this->notif->jml_surat_kp_baca2();
         $this->load->view('adminprodi/template/dashboard_header');
         $this->load->view('adminprodi/template/dashboard_side', $data);
         $this->load->view('adminprodi/template/dashboard_top', $data);
@@ -33,8 +34,11 @@ class AdminProdi extends CI_Controller
         $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
         // $data2['surat_cuti'] = $this->db->get('surat_cuti')->row_array();
         // $data['jml_kp_baca'] = $this->notif->jml_surat_kp_baca();
+        $data['jml_kp_baca2'] = $this->notif->jml_surat_kp_baca2();
 
         $data2['surat_kp'] = $this->surat_kp->kerja_praktek();
+        $data2['lokasi_id'] = $this->surat_kp->lokasi_kerja_praktek_id();
+        $data2['anggota_kp'] = $this->surat_kp->anggota_kp_lokasi();
 
         $this->load->view('adminprodi/template/dashboard_header');
         $this->load->view('adminprodi/template/dashboard_side', $data);
@@ -45,9 +49,10 @@ class AdminProdi extends CI_Controller
     public function editsuratkp($id)
     {
         $data['user'] = $this->db->get_where('user_sistem', ['id_user' => $this->session->userdata('id_user')])->row_array();
-        $where = array('nim1' => $id);
-        $data2['surat_kp'] = $this->surat_kp->edit_data($where, 'detail_anggota_kp')->result();
+        $where = array('id_kp' => $id);
+        $data2['surat_kp'] = $this->surat_kp->edit_data($where, 'surat_kerja_praktek')->result();
         // $data['jml_kp_baca'] = $this->notif->jml_surat_kp_baca();
+        $data['jml_kp_baca2'] = $this->notif->jml_surat_kp_baca2();
 
         $this->load->view('adminprodi/template/dashboard_header');
         $this->load->view('adminprodi/template/dashboard_side', $data);

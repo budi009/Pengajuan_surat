@@ -36,6 +36,7 @@
           </li>
           <li><a href="<?= base_url('admin/daftar_wisuda'); ?>"><i class="fa fa-graduation-cap"></i> Pendaftar Wisuda </a></li>
           <li><a href="<?= base_url('admin/kuisioner'); ?>"><i class="fa fa-book"></i> Kuisioner </a></li>
+          <li><a href="<?= base_url('admin/konfigurasi_kuisioner'); ?>"><i class="fa fa-cogs"></i> Konfigurasi Kuisioner </a></li>
           <li><a href="<?= base_url('auth_sistem/logout'); ?>"><i class="fa fa-sign-out"></i> Log Out </a></li>
         </ul>
       </div>

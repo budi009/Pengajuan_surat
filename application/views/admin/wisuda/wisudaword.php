@@ -18,14 +18,14 @@ foreach ($wisuda as $wis) {
                             <a style="line-height: 1;margin-left: 20px; margin-right: 120px;">Nama</a> : <?php echo $wis->nama ?><br>
                             <a style="line-height: 1;margin-left: 20px; margin-right: 127px;">NIM</a> : <?php echo $wis->nim ?><br>
                             <a style="line-height: 1;margin-left: 20px; margin-right: 67px;">Jenis Kelamin</a> : <?php echo $wis->jns_kelamin ?><br>
-                            <a style="line-height: 1;margin-left: 20px;">Tempat/Tanggal Lahir</a> : <?php echo $wis->tempat_lahir ?>, <?php echo $wis->tanggal_lahir ?><br>
+                            <a style="line-height: 1;margin-left: 20px;">Tempat/Tanggal Lahir</a> : <?php echo $wis->tempat_lahir ?>, <?php echo date('d-m-Y', strtotime($wis->tanggal_lahir))  ?><br>
                             <a style="line-height: 1;margin-left: 20px;">Program Studi</a> : <?php echo $wis->prodi ?><br>
                             <a style="line-height: 1;margin-left: 20px;">Alamat</a> : <?php echo $wis->alamat ?><br>
                             <a style="line-height: 1;margin-left: 20px;">Nomor Telephone/HP</a> : <?php echo $wis->no_hp ?><br>
                             <a style="line-height: 1;margin-left: 20px;">Lama Studi</a> :<br>
-                            <a style="line-height: 1;margin-left: 20px;">Judul Laporan</a> :<br>
+                            <a style="line-height: 1;margin-left: 20px;">Judul Laporan</a> :<?php echo $wis->pa_indo ?><br>
                             <a style="line-height: 1;margin-left: 20px;">IPK</a> :<br>
-                            <a style="line-height: 1;margin-left: 20px;">Alamat Sosmed</a> :<br>
+                            <a style="line-height: 1;margin-left: 20px;">Alamat Sosmed</a> : <?php echo $wis->sosmed ?><br>
 
 
                         </td>

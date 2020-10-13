@@ -32,111 +32,131 @@
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
+            <div>
+              <span style="color: red; font-size: 16px;">
+                *) Wajib diisi
+              </span>
+            </div>
             <br />
             <?php echo form_open_multipart('user/daftar_wisuda'); ?>
 
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama sesuai ijazah terakhir <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Nama sesuai ijazah terakhir <span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="nama" name="nama" required="required" class="form-control ">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIM Mahasiswa <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIM Mahasiswa 
               </label>
               <div class="col-md-6 col-sm-6 ">
+             
+
                 <input type="hidden" id="nim" name="nim" required="required" value="<?= $user['id_user']; ?>" class="form-control">
                 <input type="text" disabled id="nim" name="nim" value="<?= $user['id_user']; ?>" required="required" class="form-control">
 
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIK KTP <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">NIK KTP <span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="nik" name="nik" required="required" class="form-control">
               </div>
             </div>
-            <div class="form-group row">
-              <label class="control-label col-md-3 col-sm-3 label-align">Prodi <span class="required">*</span></label>
+            <div class="item form-group">
+              <label class="control-label col-md-3 col-sm-3 label-align">Program Studi </label>
               <div class="col-md-6 col-sm-6 ">
-                <input type="hidden" id="prodi" name="prodi" value="<?= $user['prodi']; ?>" required="required" class="form-control">
-                <input type="text" disabled id="prodi" name="prodi" value="<?= $user['prodi']; ?>" required="required" class="form-control">
+                <input type="hidden" id="prodi" name="prodi" value="<?php
+                                                                foreach ($prodi as $pr) {
+                                                                  echo $pr->nama_prodi;
+                                                                } ?>" required="required" class="form-control">
+                <input type="text" disabled id="prodi" name="prodi" value="<?php
+                                                                foreach ($prodi as $pr) {
+                                                                  echo $pr->nama_prodi;
+                                                                } ?>" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Jenis Kelamin <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Jenis Kelamin <span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="jk" name="jk" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tempat Lahir <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tempat Lahir <span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="ttl1" name="ttl1" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tanggal Lahir <span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tanggal Lahir <span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="date" id="ttl2" name="ttl2" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">No Hp yang aktif<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">No Hp yang aktif<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="hp" name="hp" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL KP/MKI YNG SUDAH FIX (BAHASA INDONESIA)<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Tanggal Sidang Akhir<span style="color: red;" class="required">*</span>
+              </label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" id="sidang" name="sidang" required="required" class="form-control">
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL KP/MKI YNG SUDAH FIX (BAHASA INDONESIA)<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="kp1" name="kp1" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL KP/MKI YNG SUDAH FIX (BAHASA INGGRIS)<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL KP/MKI YNG SUDAH FIX (BAHASA INGGRIS)<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="kp2" name="kp2" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL PA/TA YNG SUDAH FIX (BAHASA INDONESIA)<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL PA/TA YNG SUDAH FIX (BAHASA INDONESIA)<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="ta1" name="ta1" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL PA/TA YNG SUDAH FIX (BAHASA INGGRIS)<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">JUDUL PA/TA YNG SUDAH FIX (BAHASA INGGRIS)<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="ta2" name="ta2" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat Lengkap sesuai KTP/KK<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat Lengkap sesuai KTP/KK<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" id="alamat" name="alamat" required="required" class="form-control">
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat Sosial Media<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Alamat Sosial Media<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
-                <input type="text" id="sosmed" name="sosmed" required="required" class="form-control">
+                <textarea type="text" id="sosmed" name="sosmed" required="required" class="form-control"></textarea>
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Foto<span class="required">*</span>
+              <label class="col-form-label col-md-3 col-sm-3 label-align" for="last-name">Foto 4x6 Warna Abu-abu<span style="color: red;" class="required">*</span>
               </label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="file" id="foto" name="foto" required="required" class="form-control">

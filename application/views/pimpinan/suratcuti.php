@@ -47,7 +47,7 @@
                                           <th>Batas Cuti</th>
                                           <!-- <th>alasan</th>  -->
                                           <th>Action</th>
-                                          <th>QRcode</th>
+                                          <th>Keterangan</th>
                                         </tr>
                                       </thead>
                                       <?php
@@ -68,14 +68,14 @@
                                           <td>
 
                                             <?php if ($sc->penolakan != '') { ?>
-                                              <a class="col-md-12 btn btn-primary fa fa-check-square-o disabled " href="<?= base_url('pimpinan/editsuratcuti/') . $sc->id; ?>"> Validasi </a>
-                                              <a class="col-md-12 btn btn-danger fa fa-times-circle disabled" href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->id; ?>"> Tolak</a>
+                                              <a class="col-md-5 btn btn-primary fa fa-check-square-o disabled " href="<?= base_url('pimpinan/editsuratcuti/') . $sc->nomor_surat; ?>"></a>
+                                              <a class="col-md-5 btn btn-danger fa fa-times-circle disabled" href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->nomor_surat; ?>"></a>
                                             <?php } elseif ($sc->qrcode != '') { ?>
-                                              <a class="col-md-12 btn btn-primary fa fa-check-square-o disabled" href="<?= base_url('pimpinan/editsuratcuti/') . $sc->id; ?>"> Validasi </a>
-                                              <a class="col-md-12 btn btn-danger fa fa-times-circle disabled " href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->id; ?>"> Tolak</a>
+                                              <a class="col-md-5 btn btn-primary fa fa-check-square-o disabled" href="<?= base_url('pimpinan/editsuratcuti/') . $sc->nomor_surat; ?>"></a>
+                                              <a class="col-md-5 btn btn-danger fa fa-times-circle disabled " href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->nomor_surat; ?>"></a>
                                             <?php } else { ?>
-                                              <a class="col-md-12 btn btn-primary fa fa-check-square-o  " href="<?= base_url('pimpinan/editsuratcuti/') . $sc->id; ?>"> Validasi </a>
-                                              <a class="col-md-12 btn btn-danger fa fa-times-circle  " href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->id; ?>"> Tolak</a>
+                                              <a class="col-md-5 btn btn-primary fa fa-check-square-o  " href="<?= base_url('pimpinan/editsuratcuti/') . $sc->nomor_surat; ?>"></a>
+                                              <a class="col-md-5 btn btn-danger fa fa-times-circle  " href="<?= base_url('pimpinan/editsuratcuti_tolak/') . $sc->nomor_surat; ?>"></a>
 
                                             <?php } ?>
                                           </td>

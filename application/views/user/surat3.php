@@ -31,6 +31,11 @@
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
+            <div>
+              <span style="color: red; font-size: 16px;">
+                *) Wajib diisi
+              </span>
+            </div>
             <br />
             <form action="<?= base_url('user/surat3'); ?>" method="post" id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
 
@@ -95,13 +100,23 @@
                 </div>
               </div>
               <div class="form-group row">
-                <label class="control-label col-md-3 col-sm-3 label-align"> Nama Tempat KP/MKI <span class="required">*</span></label>
+                <label class="control-label col-md-3 col-sm-3 label-align"> Nama Tempat KP/MKI <span style="color: red;" class="required">*</span></label>
                 <div class="col-md-6 col-sm-6 ">
                   <input type="text" id="tempat" name="tempat" class="form-control " required="required">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="control-label col-md-3 col-sm-3 label-align"> Alamat Tempat KP/MKI <span class="required">*</span></label>
+                <label class="control-label col-md-3 col-sm-3 label-align"> Waktu KP<span style="color: red;" class="required">*</span></label>
+                <div class="col-md-4 ">
+                  <input type="date" id="waktu_mulai" name="waktu_mulai" class="form-control " required="required">
+                </div>
+                <span class="control-label label-align" >Sampai</span>
+                <div class="col-md-4  ">
+                  <input type="date" id="waktu_selesai" name="waktu_selesai" class="form-control " required="required">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label class="control-label col-md-3 col-sm-3 label-align"> Alamat Tempat KP/MKI <span style="color: red;" class="required">*</span></label>
                 <div class="col-md-6 col-sm-6 ">
                   <textarea type="text" id="alamat" name="alamat" class="form-control " required="required"></textarea>
                 </div>

@@ -52,13 +52,19 @@
                         <div class="form-group row">
                             <label class="control-label col-md-3 col-sm-3 label-align">Prodi </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="prodi" name="prodi" value="<?= $user['prodi']; ?>" class="form-control">
+                                <input type="hidden" id="prodi" name="prodi" value="<?= $user['prodi']; ?>" class="form-control">
+                                <input type="text" disabled id="prodi" name="prodi" value="<?= $user['prodi']; ?>" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="control-label col-md-3 col-sm-3 label-align">Kelas </label>
                             <div class="col-md-6 col-sm-6 ">
-                                <input type="text" id="kelas" name="kelas" value="<?= $user['kelas']; ?>" class="form-control">
+                            <select required id="kelas" name="kelas" class="form-control">
+                            <option  value="">-Pilih Kelas-</option>
+                            <?php foreach($kelas as $k) { 
+                                echo "<option value=" . $k->id_kelas . ">" . $k->kelas . "</options>";
+                             }?>
+                            </select>
                             </div>
                         </div>
                         <div class="form-group row">

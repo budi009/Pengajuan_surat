@@ -38,46 +38,58 @@
                                           <th>No</th>
                                           <th>NIM</th>
                                           <th>Nama</th>
-                                          <th>Prodi</th>
+                                          <th>Program Studi</th>
+                                          <th>Kelas</th>
                                           <th>Nama Dosen</th>
                                           <th>Mata Kuliah</th>
-                                          
-
                                           <th>Action</th>
                                         </tr>
                                       </thead>
-                                      <?php
-                                      $id = 1;
-                                      foreach ($kuisioner as $k) {
-                                      ?>
-                                        <tr>
-                                          <td><?php echo $id++ ?></td>
+                                      <tr>
+                                        <?php
+                                        $no = 1;
+                                        foreach ($kuisioner2 as $k) {
+                                        ?>
+                                          <td><?php echo $no++ ?></td>
                                           <td><?php echo $k->id_user ?></td>
                                           <td><?php echo $k->nama_user ?></td>
-                                          <td><?php echo $k->prodi ?></td>
-                                          <td><?php echo $k->nama_dosen ?></td>
-                                          <td><?php echo $k->mata_kuliah ?></td>
-                                          <!-- <td><?php echo $ak->th_akademik ?></td> -->
-                                          <!-- <td><?php echo $ak->nama_ortu ?></td>         
-                          <td><?php echo $ak->pekerjaan_ortu ?></td>                    
-                          <td><?php echo $ak->nip_ortu ?></td>                    
-                          <td><?php echo $ak->jabatan ?></td>                    
-                          <td><?php echo $ak->instansi ?></td>                    
-                          <td><?php echo $ak->alamat_ortu ?></td>                    
-                          <td><?php echo $ak->keperluan ?></td>                    
-                          <td><?php echo $ak->fc_ktp_ortu ?></td>                    
-                          <td><?php echo $ak->fc_ktm_mhs ?></td>                    
-                          <td><?php echo $ak->fc_buku_pedoman ?></td> -->
-                                          <td>
-                                            <!--                            
+                                          <?php foreach ($kuisioner3 as $kui) { ?>
+                                          <?php if ($kui->id_user == $k->id_user) { ?>
+                                            <td><?php echo $kui->nama_prodi ?></td>
+                                          <?php } ?>
+                                          <?php } ?>
+                                          <td><?php echo $k->kelas ?></td>
+                                        <td>
+                                          <?php
+                                          $id = 1;
+                                          foreach ($kuisioner as $ka) {
+                                          ?>
+                                          <?php if ($ka->id_user == $k->id_user) { ?>
+                                          <?php echo $ka->nama_dosen ?><br>
+                                          <?php } ?>
+                                          <?php } ?>
+                                        </td>
+                                        <td>
+                                          <?php
+                                          $id = 1;
+                                          foreach ($kuisioner as $ka) {
+                                          ?>
+                                          <?php if ($ka->id_user == $k->id_user) { ?>
+                                          <?php echo $ka->mata_kuliah ?><br>
+                                          <?php } ?>
+                                          <?php } ?>
+                                        </td>
+
+
+                                        <td>
+                                          <!--                            
                           <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/') . $ak->id; ?>"> Detail</a>
                       <a class="col-md-9 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsurataktif/') . $ak->id; ?>"> Edit</a>
                            <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/') . $ak->id; ?>"> Cetak</a>
                              -->
-                                          </td>
-                                        </tr>
+                                        </td>
+                                      </tr>
                                       <?php } ?>
-
                                     </table>
                                   </div>
                                 </div>

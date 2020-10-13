@@ -44,7 +44,7 @@
                                           <th>Tahun Angkatan</th>
                                           <th>Tahun Akademik</th>
                                           <th>Keperluan Pengajuan Surat</th>
-                                          <th>Action</th>
+                                          <th>Aksi</th>
                                           <th>Keterangan</th>
 
                                         </tr>
@@ -57,7 +57,7 @@
                                           <td><?php echo $id++ ?></td>
                                           <td><?php echo $ak->nim ?></td>
                                           <td><?php echo $ak->nama_user ?></td>
-                                          <td><?php echo $ak->prodi ?></td>
+                                          <td><?php echo $ak->nama_prodi ?></td>
                                           <td><?php echo $ak->semester ?></td>
                                           <td><?php echo $ak->th_angkatan ?></td>
                                           <td><?php echo $ak->th_akademik ?></td>
@@ -67,14 +67,14 @@
                                           <td>
 
                                           <?php if($ak->penolakan != '' ){ ?>
-                                            <a class="col-md-12 btn btn-primary fa fa-check-square-o disabled " href="<?= base_url('pimpinan/editsurataktif/') . $ak->id; ?>"> Validasi </a>
-                                            <a class="col-md-12 btn btn-danger fa fa-times-circle disabled" href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->id; ?>"> Tolak</a>
+                                            <a class="col-md-5 btn btn-primary fa fa-check-square-o disabled " href="<?= base_url('pimpinan/editsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                            <a class="col-md-5 btn btn-danger fa fa-times-circle disabled" href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->nomor_surat; ?>"></a>
                                             <?php } elseif($ak->qrcode != '') { ?>
-                                              <a class="col-md-12 btn btn-primary fa fa-check-square-o disabled" href="<?= base_url('pimpinan/editsurataktif/') . $ak->id; ?>"> Validasi </a>
-                                              <a class="col-md-12 btn btn-danger fa fa-times-circle disabled " href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->id; ?>"> Tolak</a>
+                                              <a class="col-md-5 btn btn-primary fa fa-check-square-o disabled" href="<?= base_url('pimpinan/editsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                              <a class="col-md-5 btn btn-danger fa fa-times-circle disabled " href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->nomor_surat; ?>"></a>
                                               <?php } else { ?> 
-                                                <a class="col-md-12 btn btn-primary fa fa-check-square-o  " href="<?= base_url('pimpinan/editsurataktif/') . $ak->id; ?>"> Validasi </a>
-                                              <a class="col-md-12 btn btn-danger fa fa-times-circle  " href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->id; ?>"> Tolak</a>
+                                                <a class="col-md-5 btn btn-primary fa fa-check-square-o  " href="<?= base_url('pimpinan/editsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                              <a class="col-md-5 btn btn-danger fa fa-times-circle  " href="<?= base_url('pimpinan/editsurataktif_tolak/') . $ak->nomor_surat; ?>"></a>
 
                                                 <?php } ?>
                                           </td>

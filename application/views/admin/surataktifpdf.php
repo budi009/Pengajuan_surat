@@ -135,19 +135,22 @@
         </p><br>
 
         <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
-            Banyuwangi, ............
+            Banyuwangi, <?php echo date('d-m-Y', strtotime($data->tanggal_validasi)) ?>
             <br style="line-height: 1;">
         </p>
 
         <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
-            A.n. Direktur <br>
-            Jabatan Wadir
+            a.n. Direktur <br>
+            Wakil Diraktur Bidang Akademik
             <br style="line-height: 1;">
         </p>
 
         <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
-
+        <?php if ($data->status_cetak == "Menggunakan Qrcode") : ?>
+        
             <img style="width: 100px" src="<?= 'assets/qrcode/' . $data->qrcode ?>" alt="">
+            <?php elseif($data->status_cetak == "Tanpa Qrcode") : ?>
 
+            <?php endif; ?>
         </p>
     <?php endforeach; ?>

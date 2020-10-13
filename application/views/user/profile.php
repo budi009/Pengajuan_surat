@@ -39,7 +39,9 @@
                             <h5 style="text-align: left;line-height: 2;">Nama : <?= $user['nama_user']; ?></h5>
                             <h5 style="text-align: left;line-height: 0;">NIM  : <?= $user['id_user']; ?></h5>
                             <h5 style="text-align: left;line-height: 2;">Prodi : <?= $user['prodi']; ?></h5>
-                            <h5 style="text-align: left;line-height: 0;line-break: 1; ">Kelas : <?= $user['kelas']; ?></h5><br><br>
+                            <?php foreach($kelas as $k) { ?>
+                            <h5 style="text-align: left;line-height: 0;line-break: 1; ">Kelas : <?= $k->kelas ?></h5><br><br>
+                            <?php }?>
                             <a style="font-size: 20px;" href="<?= base_url('user/edit_profil')?>"><button type="button" class="col-12 col-md-4 btn btn-primary "><i class="fa fa-edit" style="font-size: 17px;"></i> Edit Profil</button></a>
                           </div>
                           <div class="col-md-4 offset-md-4">

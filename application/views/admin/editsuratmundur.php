@@ -13,7 +13,7 @@
                       <div class="col-lg-12">
                         <div class="page-title">
                           <div class="title_left">
-                            <h3>Edit Surat Aktif Kuliah</h3>
+                            <h3>Edit Surat Mundur</h3>
                           </div>
 
                         </div>
@@ -25,16 +25,16 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                 <?php if ($sm->nomor_surat == 0) { ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="">
-                                  <?php } else{ ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $sm->nomor_surat ?>">
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="">
+                                  <?php } else{ ?> 
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="<?php echo $sm->nomor_surat ?>">
                                   <?php }?>                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                  <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $sm->mundur_id ?>">
+                                  <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $sm->nomor_surat ?>">
                                   <input type="text" disabled id="nim" name="nim" class="form-control" value="<?php echo $sm->nim ?>">
                                 </div>
                               </div>
@@ -49,7 +49,24 @@
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Prodi
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                  <input type="text" disabled id="prodi" name="prodi" class="form-control" value="<?php echo $sm->prodi ?>">
+                                  <input type="text" disabled id="prodi" name="prodi" class="form-control" value="<?php echo $sm->nama_prodi ?>">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Status Pengajuan
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <input type="text" id="status_pe" name="status_pe" class="form-control" value="<?php echo $sm->status_pengajuan ?>">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Cetak Surat
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <select id="cetak" name="cetak" class="form-control" required="required">
+                                    <option>Tanpa Qrcode</option>
+                                    <option>Menggunakan Qrcode</option>
+                                  </select>
                                 </div>
                               </div>
                               <div class="ln_solid"></div>

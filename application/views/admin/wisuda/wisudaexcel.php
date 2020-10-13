@@ -10,12 +10,14 @@
             <th>Tempat Lahir</th>
             <th>Tanggal Lahir</th>
             <th>No Hp</th>
+            <th>Tanggal Sidang Akhir</th>
             <th>Judul KP/MKI Indonesia</th>
             <th>Judul KP/MKI Inggris</th>
             <th>Judul PA Indonesia</th>
             <th>Judul PA Inggris</th>
             <th>Alamat</th>
             <th>Foto</th>
+            <th>Tahun daftar</th>
         </tr>
     </thead>
     <?php
@@ -32,12 +34,14 @@
             <td><?php echo $w->tempat_lahir ?></td>
             <td><?php echo $w->tanggal_lahir ?></td>
             <td><?php echo $w->no_hp ?></td>
+            <td><?php echo $w->sidang ?></td>
             <td><?php echo $w->kp_indo ?></td>
             <td><?php echo $w->kp_ing ?></td>
             <td><?php echo $w->pa_indo ?></td>
             <td><?php echo $w->pa_ing ?></td>
             <td><?php echo $w->alamat ?></td>
             <td><?php echo $w->foto ?></td>
+            <td><?php echo $w->tahun_daftar ?></td>
 
         </tr>
     <?php } ?>

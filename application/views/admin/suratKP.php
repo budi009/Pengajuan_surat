@@ -44,59 +44,77 @@
                                           <th>Nama</th>
                                           <th>NIM</th>
                                           <!-- <th>Prodi</th> -->
+                                          <th>Tempat Kerja Praktek</th>
                                           <th>Waktu Kerja Praktek</th>
                                           <th>Lokasi Kerja Praktek</th>
                                           <th>Pengantar Prodi</th>
+                                          <th>Status Pengajuan</th>
+                                          <th>Status Cetak Surat</th>
+                                          <th>Tanggal Mengajukan</th>
+                                          <th>Status Validasi</th>
                                           <th>Action</th>
                                         </tr>
                                       </thead>
                                       <?php
-                                        
-                                      $no = 1;
-                                      foreach ($surat_kp as $kp) {
-                                        
-                                      ?>
-                                      <?php
-                                      if ($kp->sp_prodi == NULL) { ?>
 
-                                        <?php }else { ?> 
-                                        <tr>
-                                          <td><?php echo $no++ ?></td>
-                                          <td><?php if ($kp->nomor_surat == 0) {
-                                                echo "Belum ada nomor surat";
-                                              } else {
-                                                echo $kp->nomor_surat;
-                                              }
-                                              ?></td>
-                                          <td>
-                                            <?php echo $kp->nama ?><br>
-                                            <!-- <?php echo $kp->nama2 ?><br>
-                                            <?php echo $kp->nama3 ?><br>
-                                            <?php echo $kp->nama4 ?><br>
-                                            <?php echo $kp->nama5 ?> -->
-                                          </td>
-                                          <td>
-                                            <?php echo $kp->nim1 ?><br>
-                                            <!-- <?php echo $kp->nim2 ?><br>
-                                            <?php echo $kp->nim3 ?><br>
-                                            <?php echo $kp->nim4 ?><br>
-                                            <?php echo $kp->nim5 ?> -->
-                                          </td>
-                                          <td><?php echo $kp->tempat ?></td>
-                                          <td><?php echo $kp->alamat_tempat ?></td>
-                                          <td><?php echo $kp->sp_prodi ?></td>
-                                          <td>
-                                            <a class="col-md-12 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratkp/') . $kp->nim1; ?>"> Edit</a>
-                                            <?php
-                                            if ($kp->nomor_surat == 0) { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print disabled " href="<?= base_url('admin/suratkppdf/') . $kp->id_kp; ?>"> Cetak</a>
-                                            <?php } else { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print " href="<?= base_url('admin/suratkppdf/') . $kp->id_kp; ?>"> Cetak</a>
-                                            <?php } ?>
-                                          </td>
+                                      $no = 1;
+                                      foreach ($lokasi_id as $kp) {
+
+                                      ?>
+                                        <?php
+                                        if ($kp->sp_prodi == NULL) { ?>
+
+                                        <?php } else { ?>
+                                          <tr>
+                                            <td><?php echo $no++ ?></td>
+                                            <td><?php if ($kp->nomor_surat == 0) {
+                                                  echo "Belum ada nomor surat";
+                                                } else {
+                                                  echo $kp->nomor_surat;
+                                                }
+                                                ?></td>
+                                            <td>
+                                              <?php foreach ($anggota_kp as $ag_kp) { ?>
+                                                <?php if ($ag_kp->kp_id == $kp->id_kp) { ?>
+                                                  <?php echo $ag_kp->nama ?><br>
+                                                <?php } ?>
+                                              <?php } ?>
+
+                                            </td>
+                                            <td>
+                                              <?php foreach ($anggota_kp as $ag_kp) { ?>
+                                                <?php if ($ag_kp->kp_id == $kp->id_kp) { ?>
+                                                  <?php echo $ag_kp->nim ?><br>
+                                                <?php } ?>
+
+                                              <?php } ?>
+                                            </td>
+                                            <td><?php echo $kp->tempat ?></td>
+                                            <td><?php echo $kp->waktu_mulai ?> s.d <?php echo $kp->waktu_selesai ?></td>
+                                            <td><?php echo $kp->alamat_tempat ?></td>
+                                            <td><img style="width: 100px" src="<?= base_url('assets/img/kp/' . $kp->sp_prodi); ?>" alt=""></td>
+                                            <td><?php echo $kp->status_pengajuan ?></td>
+                                            <td><?php echo $kp->status_cetak ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($kp->tanggal_mengajukan)) ?></td>
+                                            <?php if ($kp->qrcode != '') { ?>
+                                          <td> <img style="width: 50px" src="<?= base_url('assets/qrcode/' . $kp->qrcode); ?>" alt=""> </td>
+                                        <?php } else { ?>
+                                          <td> <?php echo $kp->penolakan ?> </td>
+                                        <?php } ?>
+                                            <td>
+                                              <a class="col-md-5 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratkp/') . $kp->id_kp; ?>"></a>
+                                              <?php
+                                              if ($kp->nomor_surat == 0) { ?>
+                                                <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled " href="<?= base_url('admin/suratkppdf/') . $kp->id_kp; ?>"></a>
+                                                
+                                                  <!-- <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled " href="<?= base_url('admin/suratkppdf/') . $kp->id_kp; ?>"></a> -->
+                                                <?php }else { ?>
+                                                  <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print " href="<?= base_url('admin/suratkppdf/') . $kp->id_kp; ?>"></a>
+                                                <?php } ?>
+                                            </td>
                                           <?php } ?>
-                                        </tr>
-                                      <?php } ?>
+                                          </tr>
+                                        <?php } ?>
                                     </table>
                                   </div>
                                 </div>

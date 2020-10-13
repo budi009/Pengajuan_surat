@@ -26,7 +26,7 @@
                               <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM
                               </label>
                               <div class="col-md-6 col-sm-6 ">
-                                <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $sm->mundur_id ?>">
+                                <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $sm->nomor_surat ?>">
                                 <input type="text" readonly class="form-control" value="<?php echo $sm->nim ?>">
                               </div>
                             </div>

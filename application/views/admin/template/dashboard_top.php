@@ -10,7 +10,6 @@
              <img src="<?= base_url('assets/img/profil/') . $user['gambar']; ?>" alt=""><?= $user['nama_user']; ?>
            </a>
            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-             <a class="dropdown-item" href="javascript:;"><i class="fa fa-user pull-right"></i> Profile</a>
              <a class="dropdown-item" href="<?= base_url('auth_sistem/logout'); ?>"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
            </div>
          </li>

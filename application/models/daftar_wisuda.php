@@ -8,6 +8,7 @@ class daftar_wisuda extends CI_Model
         $this->db->select('*');
         $this->db->from('daftar_wisuda');
         $this->db->join('user_sistem', 'user_sistem.id_user = daftar_wisuda.nim');
+        $this->db->join('prodi', 'user_sistem.prodi = prodi.prodi_id');
         $result = $this->db->get();
         return  $result->result();
     }

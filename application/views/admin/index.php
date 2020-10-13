@@ -42,8 +42,6 @@
 
                       <div class="right_col" role="main">
                         <div class="">
-                          <div class="page-title">
-                          </div>
                           <div class="col-md-6 col-sm-6 ">
                             <div class="x_panel">
                               <div class="x_title">
@@ -87,6 +85,9 @@
                                     </div>
                                   </div>
                                 </div>
+
+                                <br>
+                        <a style="font-size: 18;" href="<?= base_url('admin/QRcode'); ?>">Buat Qrcode </a>
                               </div>
                             </div>
                           </div>

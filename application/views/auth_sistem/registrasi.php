@@ -30,32 +30,44 @@
         <form method="post" action="<?= base_url('auth_sistem/registrasi'); ?>">
           <h1>Create Account</h1>
           <div>
-            <input type="text" id="nama" class="form-control" placeholder="Nama" name="nama" value="<?= set_value('nama'); ?>" />
+            <input required type="text" id="nama" class="form-control" placeholder="Nama" name="nama" value="<?= set_value('nama'); ?>" />
           </div>
           <div>
-            <input type="text" id="id_user" class="form-control" placeholder="NIM" name="id_user" value="<?= set_value('id_user'); ?>" />
+            <input required type="text" id="id_user" class="form-control" placeholder="NIM" name="id_user" value="<?= set_value('id_user'); ?>" />
           </div>
           <div>
             <select name="prodi" id="prodi" class="form-control">
-              <option value="">Program Studi </option>
+              <option required value="">Program Studi </option>
               <?php
               foreach ($prodi->result() as $pr) {
-                echo "<option value" . $pr->prodi_id . ">" . $pr->nama_prodi . "</options>";
+                echo "<option value=" . $pr->prodi_id . ">" . $pr->nama_prodi . "</options>";
+                // echo "<option value" . $pr->prodi_id . ">" . $pr->nama_prodi . "</options>";
               }
               ?>
             </select>
           </div><br>
           <div>
-            <input type="text" id="kelas" class="form-control" placeholder="Kelas" name="kelas" value="<?= set_value('kelas'); ?>" />
+          <select name="kelas" id="kelas" class="form-control">
+              <option required value="">-Pilih Kelas-</option>
+              <?php
+              foreach ($kelas as $k) {
+                echo "<option value=" . $k->id_kelas . ">" . $k->kelas . "</options>";
+              }
+              ?>
+            </select>
+          </div><br>
+          <div>
+          <?= form_error('email', '<h7 class="text-danger" style="">' ,'</h7>'); ?>
+            <input required type="text" id="email" class="form-control" placeholder="Email" name="email" value="<?= set_value('email'); ?>"/>  
+            
           </div>
           <div>
-            <input type="text" id="email" class="form-control" placeholder="Email" name="email" value="<?= set_value('email'); ?>" />
+          <?= form_error('password1', '<h7 class="text-danger" style="">' ,'</h7>'); ?>
+
+            <input required type="password" id="password1" class="form-control" placeholder="Password" name="password1" />
           </div>
           <div>
-            <input type="password" id="password1" class="form-control" placeholder="Password" name="password1" />
-          </div>
-          <div>
-            <input type="password" id="password2" class="form-control" placeholder="Repeat Password" name="password2" />
+            <input required type="password" id="password2" class="form-control" placeholder="Repeat Password" name="password2" />
           </div>
           <div>
             <button class="btn btn-primary submit" type="submit" style="font-size: 16px">Register</button>

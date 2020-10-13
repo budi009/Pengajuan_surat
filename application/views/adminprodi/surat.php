@@ -27,7 +27,7 @@
                               <div class="row">
                                 <div class="col-sm-12">
                                   <div class="card-box table-responsive">
-                                  <table id="mydata" class="table table-striped table-bordered bulk_action" style="width:100%">
+                                    <table id="mydata" class="table table-striped table-bordered bulk_action" style="width:100%">
                                       <thead>
                                         <tr>
                                           <th>No</th>
@@ -35,6 +35,7 @@
                                           <th>Nama</th>
                                           <th>NIM</th>
                                           <!-- <th>Prodi</th> -->
+                                          <th>Tempat Kerja Praktek</th>
                                           <th>Waktu Kerja Praktek</th>
                                           <th>Lokasi Kerja Praktek</th>
                                           <th>Action</th>
@@ -43,7 +44,7 @@
                                       <?php
 
                                       $no = 1;
-                                      foreach ($surat_kp as $kp) {
+                                      foreach ($lokasi_id as $kp) {
 
                                       ?>
                                         <?php
@@ -59,29 +60,31 @@
                                                 }
                                                 ?></td>
                                             <td>
-                                              <?php echo $kp->nama ?><br>
-                                              <!-- <?php echo $kp->nama2 ?><br>
-                                              <?php echo $kp->nama3 ?><br>
-                                              <?php echo $kp->nama4 ?><br>
-                                              <?php echo $kp->nama5 ?> -->
+                                              <?php foreach ($anggota_kp as $ag_kp) { ?>
+                                                <?php if ($ag_kp->kp_id == $kp->id_kp) { ?>
+                                                  <?php echo $ag_kp->nama ?><br>
+                                                <?php } ?>
+                                              <?php } ?>
                                             </td>
                                             <td>
-                                              <?php echo $kp->nim ?><br>
-                                              <!-- <?php echo $kp->nim2 ?><br>
-                                              <?php echo $kp->nim3 ?><br>
-                                              <?php echo $kp->nim4 ?><br>
-                                              <?php echo $kp->nim5 ?> -->
+                                              <?php foreach ($anggota_kp as $ag_kp) { ?>
+                                                <?php if ($ag_kp->kp_id == $kp->id_kp) { ?>
+                                                  <?php echo $ag_kp->nim ?><br>
+                                                <?php } ?>
+
+                                              <?php } ?>
                                             </td>
                                             <td><?php echo $kp->tempat ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($kp->waktu_mulai))  ?> s.d <?php echo date('d-m-Y', strtotime($kp->waktu_selesai))  ?></td>
                                             <td><?php echo $kp->alamat_tempat ?></td>
 
                                             <td>
-                                              <a class="col-md-12 btn btn-warning fa fa-edit " href="<?= base_url('adminprodi/editsuratkp/') . $kp->nim; ?>"> Edit</a>
+                                              <a class="col-md-5 btn btn-warning fa fa-edit " href="<?= base_url('adminprodi/editsuratkp/') . $kp->id_kp; ?>"></a>
                                               <?php
                                               if ($kp->nomor_surat == 0) { ?>
-                                                <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print disabled " href="<?= base_url('adminprodi/suratkppdf/') . $kp->id_kp; ?>"> Cetak</a>
+                                                <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled " href="<?= base_url('adminprodi/suratkppdf/') . $kp->id_kp; ?>"></a>
                                               <?php } else { ?>
-                                                <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print " href="<?= base_url('adminprodi/suratkppdf/') . $kp->id_kp; ?>"> Cetak</a>
+                                                <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print " href="<?= base_url('adminprodi/suratkppdf/') . $kp->id_kp; ?>"></a>
                                               <?php } ?>
                                             </td>
                                           <?php } ?>

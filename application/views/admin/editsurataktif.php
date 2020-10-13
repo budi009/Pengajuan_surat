@@ -26,17 +26,17 @@
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
                                   <?php if ($ak->nomor_surat == 0) { ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="">
-                                  <?php } else{ ?>
-                                    <input type="text" id="nosu" name="nosu" class="form-control" value="<?php echo $ak->nomor_surat ?>">
-                                  <?php }?>
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="">
+                                  <?php } else { ?>
+                                    <input type="text" disabled id="nosu" name="nosu" class="form-control" value="<?php echo $ak->nomor_surat ?>">
+                                  <?php } ?>
                                 </div>
                               </div>
                               <div class="form-group row">
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                  <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $ak->id ?>">
+                                  <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $ak->nomor_surat ?>">
                                   <input type="text" disabled id="nim" name="nim" class="form-control" value="<?php echo $ak->nim ?>">
                                 </div>
                               </div>
@@ -51,13 +51,30 @@
                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Prodi
                                 </label>
                                 <div class="col-md-6 col-sm-6 ">
-                                  <input type="text" disabled id="prodi" name="prodi" class="form-control" value="<?php echo $ak->prodi ?>">
+                                  <input type="text" disabled id="prodi" name="prodi" class="form-control" value="<?php echo $ak->nama_prodi ?>">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Status Pengajuan
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <input type="text" id="status_pe" name="status_pe" class="form-control" value="<?php echo $ak->status_pengajuan ?>">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Cetak Surat
+                                </label>
+                                <div class="col-md-6 col-sm-6 ">
+                                  <select id="cetak" name="cetak" class="form-control" required="required">
+                                    <option>Tanpa Qrcode</option>
+                                    <option>Menggunakan Qrcode</option>
+                                  </select>
                                 </div>
                               </div>
                               <div class="ln_solid"></div>
                               <div class="item form-group">
                                 <div class="col-md-6 col-sm-6 offset-md-4">
-                                  <a style="font-size: 20px;"><button type="submit" class="col-12 col-md-3 btn btn-primary "><i class="fa fa-arrow-left" style="font-size: 17px;"></i> Back</button></a>
+                                  <a style="font-size: 20px;"><a href="<?= base_url('admin/surat_aktif_kuliah'); ?>" class="col-12 col-md-3 btn btn-primary "><i class="fa fa-arrow-left" style="font-size: 17px;"></i> Back</a></a>
                                   <a style="font-size: 20px;"><button type="submit" class="col-12 col-md-3 btn btn-primary "><i class="fa fa-check-square-o" style="font-size: 17px;"></i> Simpan</button></a>
                                 </div>
                               </div>

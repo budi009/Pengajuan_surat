@@ -48,6 +48,10 @@
                                           <th>Mulai Cuti</th>
                                           <th>Batas Cuti</th>
                                           <th>alasan</th>
+                                          <th>Status Surat</th>
+                                          <th>Status Cetak Surat</th>
+                                          <th>Tanggal Mengajukan</th>
+                                          <th>Status Validasi</th>
                                           <th>Action</th>
                                         </tr>
                                       </thead>
@@ -65,22 +69,31 @@
                                               ?></td>
                                           <td><?php echo $sc->nim ?></td>
                                           <td><?php echo $sc->nama_user ?></td>
-                                          <td><?php echo $sc->prodi ?></td>
+                                          <td><?php echo $sc->nama_prodi ?></td>
                                           <td><?php echo $sc->semester ?></td>
                                           <td><?php echo $sc->lama_cuti ?></td>
                                           <td><?php echo $sc->mulai_cuti ?></td>
                                           <td><?php echo $sc->batas_cuti ?></td>
                                           <td><?php echo $sc->alasan ?></td>
+                                          <td><?php echo $sc->status_pengajuan ?></td>
+                                          <td><?php echo $sc->status_cetak ?></td>
+                                          <td><?php echo date('d-m-Y', strtotime($sc->tanggal_mengajukan)) ?></td>
+                                            <?php if ($sc->qrcode != '') { ?>
+                                          <td> <img style="width: 50px" src="<?= base_url('assets/qrcode/' . $sc->qrcode); ?>" alt=""> </td>
+                                        <?php } else { ?>
+                                          <td> <?php echo $sc->penolakan ?> </td>
+                                        <?php } ?>
                                           <td>
-                                            <!-- <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsuratcuti/') . $sc->nim; ?>"> Detail</a> -->
-                                            <a class="col-md-12 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratcuti/') . $sc->id; ?>"> Edit</a>
+                                            <!-- <a class="col-md-9 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsuratcuti/') . $sc->nomor_surat; ?>"> Detail</a> -->
+                                            <a class="col-md-5 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratcuti/') . $sc->nomor_surat; ?>"></a>
                                             <?php
                                             if ($sc->nomor_surat == 0) { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdf/') . $sc->nim; ?>"> Cetak</a>
-                                            <?php } else { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/') . $sc->nim; ?>"> Cetak</a>
+                                              <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdf/') . $sc->nomor_surat; ?>"></a>
+                                              
+                                                <!-- <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdf/') . $sc->nomor_surat; ?>"></a> -->
+                                              <?php }else { ?>
+                                                <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/') . $sc->nomor_surat; ?>"></a>
                                             <?php } ?>
-                                            <!-- <a title="Cetak Surat" class="col-md-9 btn btn-info fa fa-print " href="<?= base_url('admin/pdf/') . $sc->nim; ?>"> Cetak</a> -->
 
                                           </td>
 

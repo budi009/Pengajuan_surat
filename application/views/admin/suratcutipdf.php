@@ -83,7 +83,7 @@
                     <a style="margin-right: 154px">Program Studi</a> :
                 </td>
                 <td>
-                    <?php echo $data->prodi ?>
+                    <?php echo $data->nama_prodi ?>
                 </td>
             </tr>
             <tr>
@@ -134,7 +134,7 @@
         </p>
 
         <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
-            Banyuwangi, ............
+            Banyuwangi, <?php echo date('d-m-Y', strtotime($data->tanggal_validasi)) ?>
             <br style="line-height: 1;">
         </p>
 
@@ -142,13 +142,18 @@
             Direktur,
             <br style="line-height: 1;">
         </p>
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+        <?php if ($data->status_cetak == "Menggunakan Qrcode") : ?>
+        
+        <img style="width: 100px" src="<?= 'assets/qrcode/' . $data->qrcode ?>" alt="">
+        <?php elseif($data->status_cetak == "Tanpa Qrcode") : ?>
+
+        <?php endif; ?>
+
+        </p>
 
 
-        <!-- <?php
-                $qrCode = new Endroid\QrCode\QrCode('BudiRahmawan1234');
-                $qrCode->writeFile('assets/qrcode' . '/qrcode.jpg');
-                ?>
-      <img style="width: 100px" src="assets/qrcode/qrcode.png" alt=""> -->
+
 
     </body>
 <?php endforeach; ?>

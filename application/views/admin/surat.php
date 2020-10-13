@@ -40,10 +40,12 @@
                                           <th>Nama</th>
                                           <th>Prodi</th>
                                           <th>Semester</th>
-                                          <th>Tahun Angkatan</th>
-                                          <th>Tahun Akademik</th>
+                                          <th>Status Surat</th>
+                                          <th>Status Cetak Surat</th>
+                                          <th>Tanggal Mengajukan</th>
+                                          <th>Status Validasi</th>
 
-                                          <th>Action</th>
+                                          <th>Aksi</th>
                                         </tr>
                                       </thead>
                                       <?php
@@ -60,21 +62,30 @@
                                               ?></td>
                                           <td><?php echo $ak->nim ?></td>
                                           <td><?php echo $ak->nama_user ?></td>
-                                          <td><?php echo $ak->prodi ?></td>
+                                          <td><?php echo $ak->nama_prodi ?></td>
                                           <td><?php echo $ak->semester ?></td>
-                                          <td><?php echo $ak->th_angkatan ?></td>
-                                          <td><?php echo $ak->th_akademik ?></td>
-                                          <td>
+                                          <td><?php echo $ak->status_pengajuan ?></td>
+                                          <td><?php echo $ak->status_cetak ?></td>
+                                          <td><?php echo date('d-m-Y', strtotime($ak->tanggal_mengajukan)) ?></td>
+                                            <?php if ($ak->qrcode != '') { ?>
+                                          <td> <img style="width: 50px" src="<?= base_url('assets/qrcode/' . $ak->qrcode); ?>" alt=""> </td>
+                                        <?php } else { ?>
+                                          <td> <?php echo $ak->penolakan ?> </td>
+                                        <?php } ?>
+                                        <td>
 
-                                            <a class="col-md-12 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/') . $ak->nim; ?>"> Detail</a>
-                                            <a class="col-md-12 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsurataktif/') . $ak->id; ?>"> Edit</a>
-                                            <?php
-                                            if ($ak->nomor_surat == 0) { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdfsurataktif/') . $ak->nim; ?>"> Cetak</a>
-                                            <?php } else { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/') . $ak->nim; ?>"> Cetak</a>
-                                            <?php } ?>
-                                          </td>
+                                          <a class="col-md-3 btn btn-primary fa fa-search " href="<?= base_url('admin/detailsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                          <a class="col-md-3 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                          <?php
+                                          if ($ak->nomor_surat == 0) { ?>
+                                            <a title="Cetak Surat" class="col-md-3 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdfsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                          
+                                            <!-- <a title="Cetak Surat" class="col-md-3 btn btn-info fa fa-print disabled " href="<?= base_url('admin/pdfsurataktif/') . $ak->nomor_surat; ?>"></a> --> 
+                                          <?php } else { ?>
+                                            <a title="Cetak Surat" class="col-md-3 btn btn-info fa fa-print " href="<?= base_url('admin/pdfsurataktif/') . $ak->nomor_surat; ?>"></a>
+                                          <?php } ?>
+                                          <a class="col-md-3 btn btn-danger fa fa-trash " href="<?= base_url('admin/hapussurataktif/') . $ak->nomor_surat; ?>"></a>
+                                        </td>
                                         </tr>
                                       <?php } ?>
 
@@ -87,4 +98,3 @@
                         </div>
                       </div>
                     </div>
-                    

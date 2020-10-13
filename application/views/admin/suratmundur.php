@@ -47,6 +47,10 @@
                                           <th>No HP Mhs</th>
                                           <th>No HP Ortu</th>
                                           <th>Alasan Mundur</th>
+                                          <th>Status Pengajuan</th>
+                                          <th>Status Cetak Surat</th>
+                                          <th>Tanggal Mengajukan</th>
+                                          <th>Status Validasi</th>
                                           <th>Action</th>
                                         </tr>
                                       </thead>
@@ -64,21 +68,30 @@
                                               ?></td>
                                           <td><?php echo $sm->nim ?></td>
                                           <td><?php echo $sm->nama_user ?></td>
-                                          <td><?php echo $sm->prodi ?></td>
+                                          <td><?php echo $sm->nama_prodi ?></td>
                                           <td><?php echo $sm->semester ?></td>
                                           <td><?php echo $sm->telp_mhs ?></td>
                                           <td><?php echo $sm->telp_ortu ?></td>
                                           <td><?php echo $sm->alasan ?></td>
+                                          <td><?php echo $sm->status_pengajuan ?></td>
+                                          <td><?php echo $sm->status_cetak ?></td>
+                                          <td><?php echo date('d-m-Y', strtotime($sm->tanggal_mengajukan)) ?></td>
+                                            <?php if ($sm->qrcode != '') { ?>
+                                          <td> <img style="width: 50px" src="<?= base_url('assets/qrcode/' . $sm->qrcode); ?>" alt=""> </td>
+                                        <?php } else { ?>
+                                          <td> <?php echo $sm->penolakan ?> </td>
+                                        <?php } ?>
                                           <td>
-                                            <!-- <a class="col-md-12 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/') . $sm->nim; ?>"> Detail</a> -->
-                                            <a class="col-md-12 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/') . $sm->mundur_id; ?>"> Edit</a>
+                                            <!-- <a class="col-md-12 btn btn-primary fa fa-search" href="<?= base_url('admin/detailsuratmundur/') . $sm->nomor_surat; ?>"> Detail</a> -->
+                                            <a class="col-md-5 btn btn-warning fa fa-edit " href="<?= base_url('admin/editsuratmundur/') . $sm->nomor_surat; ?>"></a>
                                             <?php
                                             if ($sm->nomor_surat == 0) { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print disabled" href="<?= base_url('admin/suratmundurpdf/') . $sm->mundur_id; ?>"> Cetak</a>
-                                            <?php } else { ?>
-                                              <a title="Cetak Surat" class="col-md-12 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/') . $sm->mundur_id; ?>"> Cetak</a>
+                                              <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled" href="<?= base_url('admin/suratmundurpdf/') . $sm->nomor_surat; ?>"></a>
+                                              
+                                                <!-- <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print disabled" href="<?= base_url('admin/suratmundurpdf/') . $sm->nomor_surat; ?>"></a> -->
+                                              <?php } else { ?>
+                                                <a title="Cetak Surat" class="col-md-5 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/') . $sm->nomor_surat; ?>"></a>
                                             <?php } ?>
-                                            <!-- <a title="Cetak Surat" class="col-md-6 btn btn-info fa fa-print " href="<?= base_url('admin/suratmundurpdf/') . $sm->mundur_id; ?>"> Cetak</a> -->
                                           </td>
                                         </tr>
                                       <?php } ?>

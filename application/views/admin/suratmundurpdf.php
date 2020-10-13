@@ -18,6 +18,7 @@
     </style>
 
 </head>
+<?php foreach ($datas as $data) : ?>
 
 <body>
     <img src="assets/img/logopoliwangi.png" style="position: absolute" ; width="100px" height="auto">
@@ -35,44 +36,107 @@
         </tr>
     </table>
     <hr class="line-title">
-    <br>
+    
+    <p style="text-align: center;">
+            <span style="line-height: 1.3; font-weight: bold; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                SURAT PENGUNDURAN DIRI MAHASISWA
+            </span> <br>
+            <span style="line-height: 1; font-family: 'Times New Roman', Times, serif; font-size: 14;">
+                Nomor : <?php echo $data->nomor_surat ?> /PL36/KM.00.04/2019
+            </span>
+        </p>
 
-    <!-- <?php
+        <p style="margin-left: 50px; margin-right: 50px; text-align: justify">
+            Menindaklanjuti surat saudara perihal Surat Permohonana Pengunduran Diri dan <?php echo $data->alasan ?>
+            ,maka sesuai dengan peraturan yang berlaku, Direktur Politeknik Negeri Banyuwangi dengan ini memberikan IjinPengunduran Diri dan
+            <?php echo $data->alasan ?> kepada mahasiswa :
+        </p>
+
+        <br>
+        <table style="margin-left: 100px">
+            <tr>
+                <td>
+                    <a style="margin-right: 208px">Nama</a> :
+                </td>
+                <td>
+                    <?php echo $data->nama_user ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a style="margin-right: 215px">NIM</a> :
+                </td>
+                <td>
+                    <?php echo $data->nim ?>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <a style="margin-right: 154px">Program Studi</a> :
+                </td>
+                <td>
+                    <?php echo $data->nama_prodi ?>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a style="margin-right: 39px">Semester yang Telah di Tempuh</a> :
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a style="margin-right: 163px">IPK Terakhir</a> :
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a style="margin-right: 86px">Alasan Pengunduran Diri</a> :
+                </td>
+                <td>
+                <?php echo $data->alasan ?>
+                </td>
+            </tr>
+            
+        </table>
+
+       <br>
+       <br>
+        <p style="margin-left: 50px; margin-right: 50px; text-align: justify">
+            Demikian surat ijin pengunduran diri diberika untuk dapat dipergunakan sebagimana mestinya
+        </p>
+
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+            Banyuwangi, <?php echo date('d-m-Y', strtotime($data->tanggal_validasi)) ?>
+            <br style="line-height: 1;">
+        </p>
+
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+            a.n. Direktur <br>
+            Wakil Diraktur Bidang Akademik
+            <br style="line-height: 1;">
+        </p>
+        <p style="margin-left: 400px; margin-right: 50px; text-align: justify;">
+        <?php if ($data->status_cetak == "Menggunakan Qrcode") : ?>
+        
+        <img style="width: 100px" src="<?= 'assets/qrcode/' . $data->qrcode ?>" alt="">
+        <?php elseif($data->status_cetak == "Tanpa Qrcode") : ?>
+
+        <?php endif; ?>
+
+        </p>
 
 
-            for ($ck = 1; $ck <= 3; $ck++) {
-
-            ?>
-           <br>
-           <table border="1" style="width: 100%;"> 
-               <tr>
-                   <td>
-                   <table border="1" style="width: 100%;">
-                <tr>
-                    <td>
-                        <img style="width: 150px; height: 200px;" src="assets/img/profil/default.jpg" alt="">
-                   
-                    </td>
-                    <td >
-                       <a style="line-height: 1;margin-left: 20px; margin-right: 120px;">Nama</a> : <br>
-                       <a style="line-height: 1;margin-left: 20px; margin-right: 127px;">NIM</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Jenis Kelamin</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Tempat/Tanggal Lahir</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Program Studi</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Alamat</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Nomor Telephone/HP</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Lama Studi</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Judul Laporan</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">IPK</a> :<br>
-                       <a style="line-height: 1;margin-left: 20px;">Alamat Sosmed</a> :<br>
 
 
-                    </td>
-                </tr>
-                
-            </table>
-                   </td>
-               </tr>
-          </table>
+    </body>
+<?php endforeach; ?>
+   
            
-           <?php } ?> -->
+          

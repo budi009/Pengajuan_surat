@@ -22,11 +22,11 @@
                             <?= form_open_multipart('pimpinan/updatesuratkp'); ?>
 
 
-                            <div class="form-group row">
+                            <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $kp->id_kp ?>">
+                            <!-- <div class="form-group row">
                               <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> NIM Ketua Kelompok
                               </label>
                               <div class="col-md-6 col-sm-6 ">
-                                <input type="hidden" id="id" name="id" class="form-control" value="<?php echo $kp->id_kp ?>">
                                 <input type="text" readonly id="nim" name="nim" class="form-control" value="<?php echo $kp->nim ?>">
                               </div>
                             </div>
@@ -36,7 +36,7 @@
                               <div class="col-md-6 col-sm-6 ">
                                 <input type="text" readonly id="nama" name="nama" class="form-control" value="<?php echo $kp->nama ?>">
                               </div>
-                            </div>
+                            </div> -->
                             <div class="form-group row">
                               <label class="col-form-label col-md-3 col-sm-3 label-align" for="first-name"> Lokasi Kerja Praktek
                               </label>

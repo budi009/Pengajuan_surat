@@ -104,16 +104,16 @@
                                           <td><?php echo $detail->keperluan ?></td>
                                         </tr>
                                         <tr>
-                                          <th>Foto copy KTP Orang Tua</th>
-                                          <td><?php echo $detail->fc_ktp_ortu  ?></td>
+                                          <td><b>Foto copy KTP Orang Tua</b></td>
+                                          <td><img src="<?= base_url('assets/img/aktif_kuliah/') . $detail->fc_ktp_ortu; ?>" style="width: 100px;height: auto;"></td>
                                         </tr>
                                         <tr>
-                                          <th>Foto copy KTM Mahasiswa</th>
-                                          <td><?php echo $detail->fc_ktm_mhs  ?></td>
+                                          <td><b>Foto copy KTM Mahasiswa</b></td>
+                                          <td><img src="<?= base_url('assets/img/aktif_kuliah/') . $detail->fc_ktm_mhs; ?>" style="width: 100px;height: auto;"></td>
                                         </tr>
                                         <tr>
-                                          <th>Buku Pedoman Akademik</th>
-                                          <td><?php echo $detail->fc_buku_pedoman  ?></td>
+                                          <td><b>Buku Pedoman Akademik</b></td>
+                                          <td><img src="<?= base_url('assets/img/aktif_kuliah/') . $detail->fc_buku_pedoman; ?>" style="width: 100px;height: auto;"></td>
                                         </tr>
                                       </thead>
 
